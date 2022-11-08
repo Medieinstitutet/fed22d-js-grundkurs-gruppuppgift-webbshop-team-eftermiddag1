@@ -1,13 +1,48 @@
-när ni träffas gemensamt & hur ni gör det - kamera på/av, Teams/Discord eller bara chatt? Det är OK att vara kreativ. Man måste inte följa alla konventioner, men sätt regler för gruppen och var öppen med hur du känner och vill jobba! Då är allas förväntningar på samma nivå. Förmodligen finns det någon annan som känner precis likadant, men det är ju svårt att veta om ingen säger någonting.
+när ni träffas gemensamt & hur ni gör det - kamera på/av,
+Teams/Discord eller bara chatt? Det är OK att vara kreativ. 
+Man måste inte följa alla konventioner, men sätt regler för gruppen och var öppen med hur du känner och vill jobba! 
+Då är allas förväntningar på samma nivå. Förmodligen finns det någon annan som känner precis likadant, 
+men det är ju svårt att veta om ingen säger någonting.
+-Vi ses via teams, kamera vid check-ins. Arbeta tillsammans men utan video, vi kan skriva i chatten om det är frågor m.m.
+
 hur, när och var ni stämmer av (arbetstider, arbetsmetoder)
+-Preliminärt tisdagar och torsdagar check-ins. Check-in vid behov utöver detta. 
+
 hur ni meddelar förhinder
+-Skriva via teams.
+
 hur ni hanterar förhinder, sjukdom, om deltagande och inspirationen tryter
+-Vi försöker lösa det tillsammans, hitta tider som passar alla, peppa varandra om någon känner att det är motigt.
+
 vad är ambitionsnivån
+-Uppfylla kravlistan för projektet och försöka lära oss så mycket som möjligt.
+
 vad är kunskapsnivåerna sedan innan?
+-Alla är nybörjare på JavaScript.
+
 vad är kul? vad är tråkigt?
+-Det är kul när det händer saker på en sida, inte bara statiskt, kul att se vad man kan göra med JavaScript på en sida.
+Vi gillar lite olika delar av processen t.ex. design. 
+
 vilken linting- och prettier-konfiguration ni kör
+-Avvaktar med detta till nästa vecka.
+
 hur ni skriver commit-meddelanden
+-Var så tydlig som möjligt.
+
 hur ofta ni gör commits
-hur, när och vem gör code reviews/merges - när får man merge:a in i branchen? (föreslår att ni inte väljer "när du är klar", utan ni bör testa/kontrollera att det även fungerar på någon annans dator)
+-Göra kommit när ett delmål är klar, en punkt på listan.
+
+hur, när och vem gör code reviews/merges - när får man merge:a in i branchen? 
+(föreslår att ni inte väljer "när du är klar", 
+utan ni bör testa/kontrollera att det även fungerar på någon annans dator)
+-I början försöker vi göra det tillsammans sedan får vi känna efter vad som blir enklast och smidigast.
+
 hur ni hanterar att göra-listan/backlogen
+-Vi går igenom hur det funkar och hur vi ska hantera den på check-ins.
+
 hur er tidsplan ser ut, vad ni har för milstolpar och hur ni hanterar om ni märker att ni hamnar efter/före i planeringen
+-Följa den föreslagna tidsplanen i projektet. Om vi hamnar före, jättebra, vi kan fixa finlir och extra grejer. 
+Hamnar vi efter får vi försöka planera in fler pass, check-in eller handledning för att lösa problemet.
+
+Underskrift deltagare: Suvi Sivula
