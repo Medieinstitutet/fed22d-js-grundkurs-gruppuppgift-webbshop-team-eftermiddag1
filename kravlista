@@ -1,0 +1,86 @@
+Generellt#
+
+Beställningssidan ska vara EN sida; ni ska inte växla mellan kundkorg och produktöversikt t.ex. Det räcker alltså med HTML-fil och tillhörande JavaScript-kod.
+Webbshoppen ska vara responsiv. Hur design/utseende ser ut, är upp till er, men det ska fungera på mobil, tablet & desktop.
+Gränssnittet/sidans utseende ska vara intuitivt.
+Det ska gå att utföra hela beställningsförfarandet med hjälp av enbart tangentbordet (tillgängligt).
+Bredvid/i anslutning till varje munk ska det finnas knappar för att öka och minska antalet beställda munkar.
+Munkarna är hårdkodade i filen (de behöver inte komma från ett API, en databas eller JSON-fil)
+Produkterna ska gå att sortera utifrån pris
+När man tryckt på beställ-knappen så ska en bekräftelse-ruta visas med information om beställningen och leveranstid
+🧱 Extra för gruppjobbare
+Produkterna ska gå att sortera utifrån namn, pris, kategori och rating
+Det ska gå att filtrera produkter på prisintervall
+När man trycker på beställ-knappen så ska möjligheten att ändra beställningen tas bort (hur ni tolkar/löser detta är fritt - det kan t.ex. vara att låsa inputrutor eller dölja formuläret)
+Gränssnittet ska vara "snyggt", dvs. ni ska ha lagt tid på design. Det behöver inte vara "avancerat", men det ska vara genomarbetat. Mina skissbilder är exempel på G-.
+
+
+Beställningssammanfattning#
+
+Totalsumman ska uppdateras baserat på ändringar som sker i antal beställda munkar i realtid
+Det ska finnas en varukorgssammanställning som visar endast de munkar som har beställts. Denna ska alltså vara skild från själva beställningsformuläret. Se referensbilder längre ner.
+
+Munkarna (produkterna)#
+
+Varje munk ska ha följande egenskaper:
+Ett namn
+Ett pris
+Det ska finnas minst 10 munkar i webbshopen.
+🧱 Extra för gruppjobbare
+Varje munk ska ha (minst) två bilder
+Varje mun ska ha en rating/ett betyg
+Varje munk ska ha en kategori (ni får hitta på själva), det ska finnas 3 kategorier
+Det ska gå att filtrera produkter på prisintervall
+I presentationen av produkterna ska det gå att växla mellan minst två bilder på respektive munk.
+
+Gottfrids specialregler#
+
+På måndagar innan kl. 10 ges 10 % rabatt på hela beställningssumman. Detta visas i varukorgssammanställningen som en rad med texten "Måndagsrabatt: 10 % på hela beställningen".
+På fredagar efter kl. 15 och fram till natten mellan söndag och måndag kl. 03.00 tillkommer ett helgpåslag på 15 % på alla munkar. Detta ska inte framgå för kunden att munkarna är dyrare, utan priset ska bara vara högre i "utskriften" av munkarna.
+Om kunden har beställt för totalt mer än 800 kr ska det inte gå att välja faktura som betalsätt.
+Om kunden har beställt minst 10 munkar av samma sort, ska munkpriset för just denna munksort rabatteras med 10 %
+Om kunden beställer totalt mer än 15 munkar så blir frakten gratis. I annat fall är fraktsumman 25 kr plus 10% av totalbeloppet i varukorgen.
+Om kunden inte har lagt beställningen inom 15 minuter så ska beställningsformuläret tömmas/rensas och kunden ska meddelas att denne är för långsam.
+🧱 Extra för gruppjobbare
+Om det är jämn vecka och tisdag, så får man 25 kr rabatt på beställningen förutsatt att totalsumman överstiger 25 kr.
+Om det är luciadagen, så läggs det automatiskt till en luciamunk i beställningen.
+Om det är julafton, så ska alla priser visas med röd text och bakgrundsbilden på sidan ska ha jultema.
+Om rabattkoden a_damn_fine-cup_of-coffee matas in, blir hela beställningen 0 kr oavsett övriga gällande specialregler.
+Generellt levereras beställningar 30 minuter från då beställningen läggs, med följande undantag:
+Om det är helg så levereras munkarna istället om 1,5 h
+Om det är mitt i natten, så sker leverans om 45 min
+Om beställningen läggs någon gång på fredag mellan kl. 11 och 13 (då har personalen veckomöte) så är leveranstiden kl. 15.
+
+Formulär för kunduppgifter#
+
+Formuläret där köparen fyller i sina uppgifter skall ha:
+
+Fält för:
+Förnamn
+Efternamn
+Adress (gata)
+Postnummer
+Postort
+Ev. portkod
+Telefon (mobil)
+E-postadress
+Val för betalsätt: kort eller faktura
+Om faktura valts som betalsätt ska ett formulärfält för svenskt personnummer visas. Även detta fält ska valideras innan formuläret går att skicka iväg, dvs. att man fyllt i korrekt personnummer.
+Om kort väljs som betalsätt, visas fält för kortnummer, datum/år och CVC. Dessa behöver inte valideras!
+Checkbox för godkännande av behandling av personuppgifter
+Checkbox för beställning av nyhetsbrev (ska vara iklickad som default)
+Samtliga formulärfält ska valideras och formuläret/beställningen ska inte gå att skicka om det finns några fel
+Felen ska markeras och kommuniceras tydligt (t.ex. ej enbart med röd färg, tag i beaktande a11y)
+När formuläret är korrekt ifyllt ska Skicka-/Beställ-knappen aktiveras, innan det är den utgråad
+Det ska finnas en "Rensa beställning"-knapp som återställer samtliga formulärfält liksom eventuella beställda munkar/produkter (alltså antalet återställs till 0)
+Det ska finnas ett fält för att mata in en rabattkod.
+
+Övrigt#
+
+Det ska ges någon from av visuell feedback på när varukorgens totalsumma uppdateras. Med detta menas exempelvis någon visuell förändring, såsom en färg-skiftning, storleksskiftning, eller motsv.
+
+Tekniska anmärkningar#
+
+CSS:en ska byggas med hjälp av Sass
+Ni ska endast använda "Vanilla JavaScript", dvs. ni FÅR inte göra detta med hjälp av ett ramverk.
+HTML kan skrivas i HTML-dokumentet; noder behöver INTE skapas med JavaScript mer än om det är absolut nödvändigt.
