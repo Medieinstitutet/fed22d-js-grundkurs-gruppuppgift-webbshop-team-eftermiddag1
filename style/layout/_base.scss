@@ -1,0 +1,57 @@
+// Här kodar vi för mobilvyn.
+
+h1 {
+    font-size: 1.5rem;
+    display: inline;
+}
+
+.container {
+    position: relative;
+    float: right;
+}
+
+.shoppingCart {
+    font-size: 1.4rem;
+    position: relative;
+    top: -6px;
+}
+
+.price {
+    display: none;
+    font-size: 1.5rem;
+    position: relative;
+    top: -6px;
+}
+button {
+    width: 35px;
+    height: 35px;
+    border: 0px;
+    background: transparent;
+}
+
+button span {
+    display: block;
+    background-color: black;
+    height: 4px;
+    width: 25px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+}
+
+.nav {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(88, 145, 145);
+    position: fixed;
+    top: 2.5rem;
+    left: -100%;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+nav.open {
+    left: 0%;
+}
+
+.limited-time-campaign {
+    visibility: hidden;
+}
