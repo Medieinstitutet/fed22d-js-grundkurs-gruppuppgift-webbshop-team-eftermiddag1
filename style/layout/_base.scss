@@ -1,4 +1,7 @@
 // Här kodar vi för mobilvyn.
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
 
 h1 {
     font-size: 1.5rem;
@@ -39,17 +42,45 @@ button span {
 }
 
 .nav {
-    width: 100vw;
+    width: 55vw;
     height: 100vh;
     background-color: rgb(88, 145, 145);
     position: fixed;
-    top: 2.5rem;
-    left: -100%;
+    top: 0px;
+    right: -100%;
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 nav.open {
-    left: 0%;
+    right: 0%;
+}
+
+.nav ul li {
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+    border-top: 2px solid rgba(225,225,225,0.05);
+}
+
+.fa-regular {
+    font-size: 2rem;
+    position: relative;
+    top: 0.5rem;
+}
+
+.close {
+    font-size: 1.6rem;
+    position: relative;
+    top: 0.3rem;
+}
+
+.selection {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    top: 2rem;
+    font-size: 2rem;
+    padding: 0;
 }
 
 .limited-time-campaign {
