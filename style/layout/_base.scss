@@ -121,3 +121,12 @@ nav.open {
 .limited-time-campaign {
     visibility: hidden;
 }
+
+// Kort och faktura under denna rad är osynlig fram tills att betalningssätt har valts.
+.invoice {
+    display: none;
+}
+
+.card {
+    display: none;
+}
