@@ -5,23 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Snaskköpings bästa munkar" />
     <link rel="stylesheet" href="style/style.css" type="text/css" />
-    <script src="https://kit.fontawesome.com/23db980bb0.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/23db980bb0.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Gottfrids Munkfabrik</title>
   </head>
 
   <!-- Allt under denna kommentar syns på sidan -->
 
   <body>
-
     <header>
-      
       <h1>Gottfrids Munkfabrik</h1>
-      
+
       <div class="container">
-        
         <!--Ikon kundvagn-->
-        <a href="#" class="shoppingCart"><i class="fa-solid fa-cart-shopping"></i></a>
-        
+        <a href="#" class="shoppingCart"
+          ><i class="fa-solid fa-cart-shopping"></i
+        ></a>
+
         <!--När en munk läggs till i kundvagnen ska totalpriset dyka upp-->
         <span class="price">100kr</span>
 
@@ -32,10 +34,9 @@
           <span></span>
         </button>
       </div>
-
     </header>
 
-     <!-- Innanför nav lägger vi till vad som ska finnas i hamburgarmenyn -->
+    <!-- Innanför nav lägger vi till vad som ska finnas i hamburgarmenyn -->
     <nav class="nav">
       <ul>
         <li>Test</li>
@@ -46,33 +47,105 @@
 
     <!-- Under denna kommentar lägger vi till 'erbjudande' och alla munkar -->
     <main>
-
-    <!-- Sökfältet-->
+      <!-- Sökfältet-->
       <section>
-        <input type="Search" placeholder="Search">
+        <input type="Search" placeholder="Search" />
         <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
       </section>
 
-    <!--Kampanj-->
+      <!--Kampanj-->
       <section>Kampanj</section>
       <div>
-          <h2>Köp 15 munkar och få gratis frakt!</h2>
+        <h2>Köp 15 munkar och få gratis frakt!</h2>
       </div>
-        <!--Denna div syns när en tidsaktiverad kampanj är aktiv-->
+      <!--Denna div syns när en tidsaktiverad kampanj är aktiv-->
       <div class="limited-time-campaign">
-        <h2><!--Texten här varierar beroende på vilken rebatt som gäller då, jag sätter visibility: hidden tills dess--></h2>
+        <h2>
+          <!--Texten här varierar beroende på vilken rebatt som gäller då, jag sätter visibility: hidden tills dess-->
+        </h2>
       </div>
-        
 
-    <!--Filtrera och sortera-->
+      <!--Filtrera och sortera-->
       <section>
         <span>Filtrera och sortera</span>
         <a href="#"><!--plats för ikon--></a>
       </section>
-      
-    <!--Munkar-->
+
+      <!--Munkar-->
       <section></section>
-      
+
+      <!-- Beställningsformulär -->
+      <form>
+        <label for="firstName">Förnamn:</label><br />
+        <input type="text" id="firstName" name="firstName" /><br />
+
+        <label for="lastName">Efternamn:</label><br />
+        <input type="text" id="lastName" name="lastName" /><br />
+
+        <label for="address">Adress:</label><br />
+        <input type="text" id="address" name="address" /><br />
+
+        <label for="postalCode">Postnummer:</label><br />
+        <input type="text" id="postalCode" name="postalCode" /><br />
+
+        <label for="postalAddress">Postort:</label><br />
+        <input type="text" id="postalAddress" name="postalAddress" /><br />
+
+        <label for="portCode">Portkod:</label><br />
+        <input type="text" id="portCode" name="portCode" /><br />
+
+        <label for="phone">Telefonnummer:</label><br />
+        <input type="tel" id="phone" name="phone" /><br />
+
+        <label for="email">E-postadress:</label><br />
+        <input type="email" id="email" name="email" /><br />
+
+        <label for="card">Kort:</label>
+        <input type="radio" name="payment" id="card" />
+        <label for="invoice">Faktura:</label>
+        <input type="radio" name="payment" id="invoice" /><br />
+
+        <!-- Kort och faktura under denna rad är osynlig fram tills att betalningssätt har valts. -->
+        <div class="invoice">
+          <label for="ssn">Personnummer:</label><br />
+          <input type="text" id="ssn" name="ssn" />
+        </div>
+
+        <div class="card">
+          <label for="cardNumber">Kortnummer:</label><br />
+          <input type="number" id="cardNumber" name="cardNumber" /><br />
+          <label for="month">Månad:</label><br />
+          <input type="number" id="month" name="month" /><br />
+          <label for="year">År:</label><br />
+          <input type="number" id="year" name="year" /><br />
+          <label for="cvc">CVC:</label><br />
+          <input type="number" id="cvc" name="cvc" /><br />
+        </div>
+
+        <label for="discountCode">Rabattkod:</label
+        ><input type="text" id="discountCode" name="discountCode" /> <br />
+
+        <input type="checkbox" id="approvalGDPR" name="approvalGDPR" /><label
+          for="approvalGDPR"
+        >
+          Jag godkänner att mina personuppgifter lagras.
+        </label>
+        <br />
+
+        <input type="checkbox" id="newsletter" name="newsletter" /><label
+          for="newsletter"
+        >
+          Ja tack! Jag vill ha nyhetsbrev skickat till min e-postadress.
+        </label>
+        <br />
+
+        <input
+          type="submit"
+          value="Skicka beställning"
+          id="submitButton"
+        /><br />
+        <input type="button" value="Rensa beställning" id="clearOrderButton" />
+      </form>
     </main>
     <footer></footer>
     <script src="script.js"></script>

@@ -365,4 +365,12 @@ nav.open {
 
 .limited-time-campaign {
   visibility: hidden;
+}
+
+.invoice {
+  display: none;
+}
+
+.card {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
