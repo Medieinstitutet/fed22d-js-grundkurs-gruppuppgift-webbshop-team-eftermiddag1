@@ -17,6 +17,7 @@ h1 {
     align-items: center;
     display: table-cell;
     vertical-align: middle;
+    left: 10px;
 }
 
 .container {
@@ -26,6 +27,7 @@ h1 {
     display: flex;
     align-items: center;
     gap: 3px;
+    right: 20px;
 }
 
 .shoppingCart {
@@ -40,14 +42,15 @@ h1 {
     position: relative;
     top: -6px;
 }
-button {
+
+.menuButton {
     width: 35px;
     height: 35px;
     border: 0px;
     background: transparent;
 }
 
-button span {
+.menuButton span {
     display: block;
     background-color: black;
     height: 4px;
@@ -64,6 +67,7 @@ button span {
     top: 0px;
     right: -100%;
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 1;
 }
 
 nav.open {
@@ -81,10 +85,13 @@ nav.open {
     top: 0.5rem;
 }
 
-.close {
+.closeMenu {
     font-size: 1.6rem;
     position: relative;
     top: 0.3rem;
+    background: transparent;
+    outline: 0;
+    border: 0;
 }
 
 .selection {
@@ -101,6 +108,7 @@ nav.open {
 .container2 {
     position: relative;
     padding: 3px;
+    z-index: 0;
 }
 
 .search {
@@ -120,6 +128,66 @@ nav.open {
 
 .limited-time-campaign {
     visibility: hidden;
+}
+
+// Kundkorg
+
+.summary {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(158, 165, 165);
+    position: fixed;
+    top: 0px;
+    right: -100%;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.summary.open {
+    right: 0%;
+}
+
+.summary span {
+    font-size: 1.5rem;
+}
+
+.summary p {
+    font-size: 2rem;
+}
+
+.orderButton {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.closeSummary {
+    background: transparent;
+    border: 0;
+}
+.amountProducts {
+    display: flex;
+    justify-content: space-around;
+}
+
+.discount {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tax {
+    display: flex;
+    justify-content: space-around;
+}
+
+.line {
+    border-bottom: 1px solid;
+    width: 50vw;
+    margin: auto;
+}
+
+.totalPrice {
+    display: flex;
+    justify-content: space-around;
 }
 
 // Kort och faktura under denna rad är osynlig fram tills att betalningssätt har valts.
