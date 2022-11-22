@@ -56,7 +56,6 @@
     </nav>
     <!-- Under denna kommentar lägger vi till 'erbjudande' och alla munkar -->
     <main>
-
       <!--sökfältet-->
       <section class="container2">
         <form class="searchbox">
@@ -79,10 +78,19 @@
       </div>
 
       <!--Filtrera och sortera-->
-      <section>
-        <span>Filtrera och sortera</span>
-        <a href="#"><!--plats för ikon--></a>
-      </section>
+      <div class="sort-filter">
+        <div class="sort">
+          <i class="fa-solid fa-sort"></i>
+          <select name="sort" id="sort">
+            <option value="">Sortera efter</option>
+            <option value="name">Namn</option>
+            <option value="price">Pris</option>
+            <option value="category">Kategori</option>
+            <option value="rating">Rating</option>
+          </select>
+        </div>
+        <div class="filter">Filter</div>
+      </div>
 
       <!--Munkar-->
       <section>
@@ -465,9 +473,10 @@
           <span>Rabatt</span>
           <span>-0kr</span>
         </div>
-        <br>
-        <p class="line"></p> <!--Linje som skiljer texten åt-->
-        <br>
+        <br />
+        <p class="line"></p>
+        <!--Linje som skiljer texten åt-->
+        <br />
         <div class="tax">
           <span>Moms</span>
           <span>0kr</span>
