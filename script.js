@@ -10,6 +10,20 @@ function menuOpen() {
   nav.classList.toggle("open");
 }
 
+// Produktöversikt
+const shoppingCart = document.querySelector(".shoppingCart");
+const close = document.querySelector(".closeSummary");
+const summary = document.querySelector(".summary");
+const orderButton = document.querySelector('.order')
+
+shoppingCart.addEventListener("click", summaryOpen);
+close.addEventListener("click", summaryOpen);
+orderButton.addEventListener("click", summaryOpen)
+
+function summaryOpen() {
+  summary.classList.toggle("open");
+}
+
 // Kort eller faktura
 const invoiceButton = document.querySelector("#invoice");
 const invoiceFields = document.querySelector(".invoice");

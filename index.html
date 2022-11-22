@@ -48,7 +48,6 @@
       <button class="closeMenu">
         <i class="fa-regular fa-circle-xmark"></i>
       </button>
-      <span class="close">Stäng</span>
       <ul class="selection">
         <li><i class="fa-solid fa-house"></i>Start</li>
         <li><i class="fa-solid fa-address-card"></i>Om oss</li>
@@ -57,6 +56,7 @@
     </nav>
     <!-- Under denna kommentar lägger vi till 'erbjudande' och alla munkar -->
     <main>
+
       <!--sökfältet-->
       <section class="container2">
         <form class="searchbox">
@@ -64,22 +64,26 @@
           <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
         </form>
       </section>
+
       <!--Kampanj-->
       <section>Kampanj</section>
       <div>
         <h2>Köp 15 munkar och få gratis frakt!</h2>
       </div>
+
       <!--Denna div syns när en tidsaktiverad kampanj är aktiv-->
       <div class="limited-time-campaign">
         <h2>
           <!--Texten här varierar beroende på vilken rebatt som gäller då, jag sätter visibility: hidden tills dess-->
         </h2>
       </div>
+
       <!--Filtrera och sortera-->
       <section>
         <span>Filtrera och sortera</span>
         <a href="#"><!--plats för ikon--></a>
       </section>
+
       <!--Munkar-->
       <section>
         <!--Munkblock-->
@@ -446,10 +450,41 @@
         </div>
       </section>
 
+      <!--Produktöversikt-->
+      <section class="summary">
+        <button class="closeSummary">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </button>
+        <h2>Kundkorg</h2>
+        <!--Här ska munkarna komma upp efter att ha lagt till dom i kundkorgen-->
+        <div class="amountProducts">
+          <span>Summa</span>
+          <span>0kr</span>
+        </div>
+        <div class="discount">
+          <span>Rabatt</span>
+          <span>-0kr</span>
+        </div>
+        <br>
+        <p class="line"></p> <!--Linje som skiljer texten åt-->
+        <br>
+        <div class="tax">
+          <span>Moms</span>
+          <span>0kr</span>
+        </div>
+        <div class="totalPrice">
+          <p>Totalt</p>
+          <p>0kr</p>
+        </div>
+        <div class="orderButton">
+          <a href="#form"><button class="order">Till beställning</button></a>
+        </div>
+      </section>
+
       <!-- Här kan vi skapa produktsammanställningen! -->
 
       <!-- Beställningsformulär -->
-      <form>
+      <form id="form">
         <label for="firstName">Förnamn:</label><br />
         <input type="text" id="firstName" name="firstName" required /><br />
 
