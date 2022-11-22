@@ -521,11 +521,25 @@ nav.open {
      -moz-appearance: none;
           appearance: none;
   border: none;
+  cursor: pointer;
 }
 
 .sort-filter {
+  margin: 15px;
+}
+
+.sort-filter-actions {
   justify-content: space-between;
   display: flex;
   align-items: center;
-  margin: 15px;
+  margin-bottom: 10px;
+}
+
+.filter-range {
+  text-align: right;
+  display: none;
+}
+
+.filter {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

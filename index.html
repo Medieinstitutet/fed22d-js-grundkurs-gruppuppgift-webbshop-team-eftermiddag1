@@ -79,17 +79,26 @@
 
       <!--Filtrera och sortera-->
       <div class="sort-filter">
-        <div class="sort">
-          <i class="fa-solid fa-sort"></i>
-          <select name="sort" id="sort">
-            <option value="">Sortera efter</option>
-            <option value="name">Namn</option>
-            <option value="price">Pris</option>
-            <option value="category">Kategori</option>
-            <option value="rating">Rating</option>
-          </select>
+        <div class="sort-filter-actions">
+          <div class="sort">
+            <i class="fa-solid fa-sort"></i>
+            <select name="sort" id="sort">
+              <option value="">Sortera efter</option>
+              <option value="name">Namn</option>
+              <option value="price">Pris</option>
+              <option value="category">Kategori</option>
+              <option value="rating">Rating</option>
+            </select>
+          </div>
+          <div class="filter">
+            <i class="fa-solid fa-filter"></i>Filtrera på pris
+          </div>
         </div>
-        <div class="filter">Filter</div>
+        <div class="filter-range">
+          <input type="number" min="0" max="50" name="minPrice" /> kr -
+          <input type="number" min="0" max="50" name="maxPrice" /> kr
+          <input type="button" value="Visa resultat" />
+        </div>
       </div>
 
       <!--Munkar-->
