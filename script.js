@@ -1,15 +1,15 @@
-const menuButton = document.querySelector('.menuButton');
-const menuClose = document.querySelector('.closeMenu');
-const nav = document.querySelector('.nav');
+const menuButton = document.querySelector(".menuButton");
+const menuClose = document.querySelector(".closeMenu");
+const nav = document.querySelector(".nav");
 
-menuButton.addEventListener('click', menuOpen);
-menuClose.addEventListener('click', menuOpen);
+menuButton.addEventListener("click", menuOpen);
+menuClose.addEventListener("click", menuOpen);
 
 function menuOpen() {
     nav.classList.toggle("open");
 }
 
-// Produktöversikt
+// ProduktÃ¶versikt
 const shoppingCart = document.querySelector(".shoppingCart");
 const close = document.querySelector(".closeSummary");
 const summary = document.querySelector(".summary");
@@ -51,7 +51,7 @@ let munkar = [
         name: "Cake donut",
         price: "17",
         rating: "3",
-        category: "Övriga munkar",
+        category: "Ã–vriga munkar",
     },
     {
         name: "Almond snack donut",
@@ -63,7 +63,7 @@ let munkar = [
         name: "Donut with apricot filling",
         price: "19",
         rating: "4",
-        category: "Övriga munkar",
+        category: "Ã–vriga munkar",
     },
     {
         name: "Choco sweet crumble donut",
@@ -108,3 +108,12 @@ let munkar = [
         category: "Munkar med frosting",
     },
 ];
+function createMunk() {
+    let munk;
+    for (let munkIndex of munkar) {
+        munk = document.createElement("div");
+        munk.innerHTML = munkIndex;
+        document.querySelector("#munkBlock").appendChild(munk);
+    }
+}
+createMunk();
