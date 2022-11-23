@@ -7,14 +7,8 @@
     <link rel="stylesheet" href="style/style.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/23db980bb0.js"
-      crossorigin="anonymous"
-    ></script>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/23db980bb0.js" crossorigin="anonymous"></script>
 
     <title>Gottfrids Munkfabrik</title>
   </head>
@@ -27,9 +21,7 @@
 
       <div class="container">
         <!--Ikon kundvagn-->
-        <a href="#" class="shoppingCart"
-          ><i class="fa-solid fa-cart-shopping"></i
-        ></a>
+        <a href="#" class="shoppingCart"><i class="fa-solid fa-cart-shopping"></i></a>
 
         <!--När en munk läggs till i kundvagnen ska totalpriset dyka upp-->
         <span class="price">100kr</span>
@@ -56,7 +48,6 @@
     </nav>
     <!-- Under denna kommentar lägger vi till 'erbjudande' och alla munkar -->
     <main>
-
       <!--sökfältet-->
       <section class="container2">
         <form class="searchbox">
@@ -79,10 +70,26 @@
       </div>
 
       <!--Filtrera och sortera-->
-      <section>
-        <span>Filtrera och sortera</span>
-        <a href="#"><!--plats för ikon--></a>
-      </section>
+      <div class="sort-filter">
+        <div class="sort-filter-actions">
+          <div class="sort">
+            <i class="fa-solid fa-sort"></i>
+            <select name="sort" id="sort">
+              <option value="">Sortera efter</option>
+              <option value="name">Namn</option>
+              <option value="price">Pris</option>
+              <option value="category">Kategori</option>
+              <option value="rating">Rating</option>
+            </select>
+          </div>
+          <div class="filter"><i class="fa-solid fa-filter"></i>Filtrera på pris</div>
+        </div>
+        <div class="filter-range">
+          <input type="number" min="0" max="50" name="minPrice" /> kr -
+          <input type="number" min="0" max="50" name="maxPrice" /> kr
+          <input type="button" value="Visa resultat" />
+        </div>
+      </div>
 
       <!--Munkar-->
       <section>
@@ -93,31 +100,13 @@
           Beskrivning av munken
           <div class="input-group plus-minus-input">
             <div class="input-group-button">
-              <button
-                class="plus"
-                type="button"
-                data-quantity="plus"
-                data-field="quantity1"
-                aria-label="press for +"
-              >
+              <button class="plus" type="button" data-quantity="plus" data-field="quantity1" aria-label="press for +">
                 +
               </button>
             </div>
-            <input
-              class="input-group-field"
-              type="number"
-              name="quantity1"
-              value="0"
-              ;
-            />
+            <input class="input-group-field" type="number" name="quantity1" value="0" ; />
             <div class="input-group-button">
-              <button
-                class="minus"
-                type="button"
-                data-quantity="minus"
-                data-field="quantity1"
-                aria-label="press for -"
-              >
+              <button class="minus" type="button" data-quantity="minus" data-field="quantity1" aria-label="press for -">
                 -
               </button>
             </div>
@@ -130,31 +119,13 @@
           Beskrivning av munken
           <div class="input-group plus-minus-input">
             <div class="input-group-button">
-              <button
-                class="plus"
-                type="button"
-                data-quantity="plus"
-                data-field="quantity2"
-                aria-label="press for +"
-              >
+              <button class="plus" type="button" data-quantity="plus" data-field="quantity2" aria-label="press for +">
                 +
               </button>
             </div>
-            <input
-              class="input-group-field"
-              type="number"
-              name="quantity2"
-              value="0"
-              ;
-            />
+            <input class="input-group-field" type="number" name="quantity2" value="0" />
             <div class="input-group-button">
-              <button
-                class="minus"
-                type="button"
-                data-quantity="minus"
-                data-field="quantity2"
-                aria-label="press for -"
-              >
+              <button class="minus" type="button" data-quantity="minus" data-field="quantity2" aria-label="press for -">
                 -
               </button>
             </div>
@@ -166,31 +137,13 @@
           Beskrivning av munken
           <div class="input-group plus-minus-input">
             <div class="input-group-button">
-              <button
-                class="plus"
-                type="button"
-                data-quantity="plus"
-                data-field="quantity3"
-                aria-label="press for +"
-              >
+              <button class="plus" type="button" data-quantity="plus" data-field="quantity3" aria-label="press for +">
                 +
               </button>
             </div>
-            <input
-              class="input-group-field"
-              type="number"
-              name="quantity3"
-              value="0"
-              ;
-            />
+            <input class="input-group-field" type="number" name="quantity3" value="0" ; />
             <div class="input-group-button">
-              <button
-                class="minus"
-                type="button"
-                data-quantity="minus"
-                data-field="quantity3"
-                aria-label="press for -"
-              >
+              <button class="minus" type="button" data-quantity="minus" data-field="quantity3" aria-label="press for -">
                 -
               </button>
             </div>
@@ -202,31 +155,13 @@
           Beskrivning av munken
           <div class="input-group plus-minus-input">
             <div class="input-group-button">
-              <button
-                class="plus"
-                type="button"
-                data-quantity="plus"
-                data-field="quantity4"
-                aria-label="press for +"
-              >
+              <button class="plus" type="button" data-quantity="plus" data-field="quantity4" aria-label="press for +">
                 +
               </button>
             </div>
-            <input
-              class="input-group-field"
-              type="number"
-              name="quantity4"
-              value="0"
-              ;
-            />
+            <input class="input-group-field" type="number" name="quantity4" value="0" ; />
             <div class="input-group-button">
-              <button
-                class="minus"
-                type="button"
-                data-quantity="minus"
-                data-field="quantity4"
-                aria-label="press for -"
-              >
+              <button class="minus" type="button" data-quantity="minus" data-field="quantity4" aria-label="press for -">
                 -
               </button>
             </div>
@@ -238,31 +173,13 @@
           Beskrivning av munken
           <div class="input-group plus-minus-input">
             <div class="input-group-button">
-              <button
-                class="plus"
-                type="button"
-                data-quantity="plus"
-                data-field="quantity5"
-                aria-label="press for +"
-              >
+              <button class="plus" type="button" data-quantity="plus" data-field="quantity5" aria-label="press for +">
                 +
               </button>
             </div>
-            <input
-              class="input-group-field"
-              type="number"
-              name="quantity5"
-              value="0"
-              ;
-            />
+            <input class="input-group-field" type="number" name="quantity5" value="0" ; />
             <div class="input-group-button">
-              <button
-                class="minus"
-                type="button"
-                data-quantity="minus"
-                data-field="quantity5"
-                aria-label="press for -"
-              >
+              <button class="minus" type="button" data-quantity="minus" data-field="quantity5" aria-label="press for -">
                 -
               </button>
             </div>
@@ -274,31 +191,13 @@
           Beskrivning av munken
           <div class="input-group plus-minus-input">
             <div class="input-group-button">
-              <button
-                class="plus"
-                type="button"
-                data-quantity="plus"
-                data-field="quantity6"
-                aria-label="press for +"
-              >
+              <button class="plus" type="button" data-quantity="plus" data-field="quantity6" aria-label="press for +">
                 +
               </button>
             </div>
-            <input
-              class="input-group-field"
-              type="number"
-              name="quantity6"
-              value="0"
-              ;
-            />
+            <input class="input-group-field" type="number" name="quantity6" value="0" ; />
             <div class="input-group-button">
-              <button
-                class="minus"
-                type="button"
-                data-quantity="minus"
-                data-field="quantity6"
-                aria-label="press for -"
-              >
+              <button class="minus" type="button" data-quantity="minus" data-field="quantity6" aria-label="press for -">
                 -
               </button>
             </div>
@@ -310,31 +209,13 @@
           Beskrivning av munken
           <div class="input-group plus-minus-input">
             <div class="input-group-button">
-              <button
-                class="plus"
-                type="button"
-                data-quantity="plus"
-                data-field="quantity7"
-                aria-label="press for +"
-              >
+              <button class="plus" type="button" data-quantity="plus" data-field="quantity7" aria-label="press for +">
                 +
               </button>
             </div>
-            <input
-              class="input-group-field"
-              type="number"
-              name="quantity7"
-              value="0"
-              ;
-            />
+            <input class="input-group-field" type="number" name="quantity7" value="0" ; />
             <div class="input-group-button">
-              <button
-                class="minus"
-                type="button"
-                data-quantity="minus"
-                data-field="quantity7"
-                aria-label="press for -"
-              >
+              <button class="minus" type="button" data-quantity="minus" data-field="quantity7" aria-label="press for -">
                 -
               </button>
             </div>
@@ -346,31 +227,13 @@
           Beskrivning av munken
           <div class="input-group plus-minus-input">
             <div class="input-group-button">
-              <button
-                class="plus"
-                type="button"
-                data-quantity="plus"
-                data-field="quantity8"
-                aria-label="press for +"
-              >
+              <button class="plus" type="button" data-quantity="plus" data-field="quantity8" aria-label="press for +">
                 +
               </button>
             </div>
-            <input
-              class="input-group-field"
-              type="number"
-              name="quantity8"
-              value="0"
-              ;
-            />
+            <input class="input-group-field" type="number" name="quantity8" value="0" ; />
             <div class="input-group-button">
-              <button
-                class="minus"
-                type="button"
-                data-quantity="minus"
-                data-field="quantity8"
-                aria-label="press for -"
-              >
+              <button class="minus" type="button" data-quantity="minus" data-field="quantity8" aria-label="press for -">
                 -
               </button>
             </div>
@@ -382,31 +245,13 @@
           Beskrivning av munken
           <div class="input-group plus-minus-input">
             <div class="input-group-button">
-              <button
-                class="plus"
-                type="button"
-                data-quantity="plus"
-                data-field="quantity9"
-                aria-label="press for +"
-              >
+              <button class="plus" type="button" data-quantity="plus" data-field="quantity9" aria-label="press for +">
                 +
               </button>
             </div>
-            <input
-              class="input-group-field"
-              type="number"
-              name="quantity9"
-              value="0"
-              ;
-            />
+            <input class="input-group-field" type="number" name="quantity9" value="0" ; />
             <div class="input-group-button">
-              <button
-                class="minus"
-                type="button"
-                data-quantity="minus"
-                data-field="quantity9"
-                aria-label="press for -"
-              >
+              <button class="minus" type="button" data-quantity="minus" data-field="quantity9" aria-label="press for -">
                 -
               </button>
             </div>
@@ -418,31 +263,13 @@
           Beskrivning av munken
           <div class="input-group plus-minus-input">
             <div class="input-group-button">
-              <button
-                class="plus"
-                type="button"
-                data-quantity="plus"
-                data-field="quantity"
-                aria-label="press for +"
-              >
+              <button class="plus" type="button" data-quantity="plus" data-field="quantity" aria-label="press for +">
                 +
               </button>
             </div>
-            <input
-              class="input-group-field"
-              type="number"
-              name="quantity"
-              value="0"
-              ;
-            />
+            <input class="input-group-field" type="number" name="quantity" value="0" ; />
             <div class="input-group-button">
-              <button
-                class="minus"
-                type="button"
-                data-quantity="minus"
-                data-field="quantity"
-                aria-label="press for -"
-              >
+              <button class="minus" type="button" data-quantity="minus" data-field="quantity" aria-label="press for -">
                 -
               </button>
             </div>
@@ -465,9 +292,10 @@
           <span>Rabatt</span>
           <span>-0kr</span>
         </div>
-        <br>
-        <p class="line"></p> <!--Linje som skiljer texten åt-->
-        <br>
+        <br />
+        <p class="line"></p>
+        <!--Linje som skiljer texten åt-->
+        <br />
         <div class="tax">
           <span>Moms</span>
           <span>0kr</span>
@@ -498,12 +326,7 @@
         <input type="text" id="postalCode" name="postalCode" required /><br />
 
         <label for="postalAddress">Postort:</label><br />
-        <input
-          type="text"
-          id="postalAddress"
-          name="postalAddress"
-          required
-        /><br />
+        <input type="text" id="postalAddress" name="postalAddress" required /><br />
 
         <label for="portCode">Portkod:</label><br />
         <input type="text" id="portCode" name="portCode" /><br />
@@ -536,28 +359,18 @@
           <input type="number" id="cvc" name="cvc" /><br />
         </div>
 
-        <label for="discountCode">Rabattkod:</label
-        ><input type="text" id="discountCode" name="discountCode" /> <br />
+        <label for="discountCode">Rabattkod:</label><input type="text" id="discountCode" name="discountCode" /> <br />
 
-        <input type="checkbox" id="approvalGDPR" name="approvalGDPR" /><label
-          for="approvalGDPR"
-        >
+        <input type="checkbox" id="approvalGDPR" name="approvalGDPR" /><label for="approvalGDPR">
           Jag godkänner att mina personuppgifter lagras.
         </label>
         <br />
 
         <input type="checkbox" id="newsletter" name="newsletter" checked />
-        <label for="newsletter">
-          Ja tack! Jag vill ha nyhetsbrev skickat till min e-postadress.
-        </label>
+        <label for="newsletter"> Ja tack! Jag vill ha nyhetsbrev skickat till min e-postadress. </label>
         <br />
 
-        <input
-          type="submit"
-          value="Skicka beställning"
-          id="submitButton"
-          disabled
-        /><br />
+        <input type="submit" value="Skicka beställning" id="submitButton" disabled /><br />
         <input type="button" value="Rensa beställning" id="clearOrderButton" />
       </form>
     </main>
