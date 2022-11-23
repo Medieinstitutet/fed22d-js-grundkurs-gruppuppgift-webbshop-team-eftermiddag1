@@ -109,11 +109,7 @@ let munkar = [
     },
 ];
 function createMunk() {
-    let munk;
-    for (let munkIndex of munkar) {
-        munk = document.createElement("div");
-        munk.innerHTML = munkIndex;
-        document.querySelector("#munkBlock").appendChild(munk);
+    for (let munk of munkar) {
     }
 }
 createMunk();
