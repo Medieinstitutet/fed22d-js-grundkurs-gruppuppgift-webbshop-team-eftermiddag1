@@ -30,6 +30,24 @@ h1 {
     right: 20px;
 }
 
+.cartContainer {
+    width: 30px;
+    height: 30px;
+}
+
+.amount {
+    background-color: red;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 1rem;
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
 .shoppingCart {
     font-size: 1.4rem;
     position: relative;
@@ -37,10 +55,13 @@ h1 {
 }
 
 .price {
-    display: none;
     font-size: 1.5rem;
     position: relative;
-    top: -6px;
+    display: none;
+}
+
+.price.open {
+    display: block;
 }
 
 .menuButton {
@@ -138,7 +159,7 @@ nav.open {
     background-color: rgb(158, 165, 165);
     position: fixed;
     top: 0px;
-    right: -100%;
+    right: -110%;
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -163,6 +184,13 @@ nav.open {
 .closeSummary {
     background: transparent;
     border: 0;
+    position: relative;
+    left: 20px;
+}
+
+.cartText {
+    position: relative;
+    text-align: center;
 }
 .amountProducts {
     display: flex;
@@ -170,11 +198,6 @@ nav.open {
 }
 
 .discount {
-    display: flex;
-    justify-content: space-around;
-}
-
-.tax {
     display: flex;
     justify-content: space-around;
 }
@@ -188,6 +211,11 @@ nav.open {
 .totalPrice {
     display: flex;
     justify-content: space-around;
+}
+
+.donutsOrdered {
+    text-align: center;
+    
 }
 
 // Kort och faktura under denna rad är osynlig fram tills att betalningssätt har valts.
