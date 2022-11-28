@@ -537,7 +537,29 @@ nav.open {
   text-align: center;
 }
 
-/* Kort och faktura under denna rad är osynlig fram tills att betalningssätt har valts.*/
+#img2 {
+  opacity: 0;
+}
+
+.donutContainer {
+  display: flex;
+}
+
+.slideshowBtn {
+  position: relative;
+  left: 4rem;
+}
+
+#leftArrow {
+  background: transparent;
+  border: 0;
+}
+
+#rightArrow {
+  background: transparent;
+  border: 0;
+}
+
 .invoice {
   display: none;
 }
