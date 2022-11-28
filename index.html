@@ -21,10 +21,17 @@
 
       <div class="container">
         <!--Ikon kundvagn-->
-        <a href="#" class="shoppingCart"><i class="fa-solid fa-cart-shopping"></i></a>
+
+        <div class="cartContainer">
+          <a href="#" class="shoppingCart" >
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+          <span class="amount"></span>
+        </div>
 
         <!--När en munk läggs till i kundvagnen ska totalpriset dyka upp-->
-        <span class="price">100kr</span>
+        <span class="price">0kr</span>
+        
 
         <!-- Knappen till hamburgarmenyn -->
         <button class="menuButton" aria-label="menu">
@@ -91,63 +98,37 @@
         </div>
       </div>
 
-        <!--Munkar-->
-        <section class="munkBlock">
-        <!--Munkblock-->
-            <div class="munk katergori1">
-                <h2 class="munknamn">Munkens namn</h2>
-                <img src="#" alt="munk1">
-                <h3>Pris</h3>
-                <h3>Rating</h3>
-                Beskrivning av munken
-                <div class="input-group plus-minus-input">
-                    <div class="input-group-button">
-                        <button class="plus" type="button" data-quantity="plus" data-field="quantity1" aria-label="press for +">+</button>
-                    </div>
-                    <input class="input-group-field" type="number" name="quantity1" value="0" ;>
-                    <div class="input-group-button">
-                        <button class="minus" type="button" data-quantity="minus" data-field="quantity1" aria-label="press for -">-</button>
-                    </div>
-                </div>
-                <button class="buy" type="button" aria-label="tryck för köp">Köp</button>
-            </div>
-        </section>
-        <!--slut på ett munkblock-->
-    <!-- Sökfältet-->
-      <section class="container2">
-        <form class="searchbox">
-        <input type="text" placeholder="Search" class="search">
+      <!--Munkar-->
+      <section>
 
-        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-        </form>
-      </section>
+        <div class="munkContainer"></div>
+
 
       <!--Produktöversikt-->
       <section class="summary">
         <button class="closeSummary">
           <i class="fa-regular fa-circle-xmark"></i>
         </button>
-        <h2>Kundkorg</h2>
+        <h2 class="cartText">Kundkorg</h2>
         <!--Här ska munkarna komma upp efter att ha lagt till dom i kundkorgen-->
+        <div class="donutsOrdered">
+      
+        </div>
         <div class="amountProducts">
           <span>Summa</span>
-          <span>0kr</span>
+          <span class="priceSummary">0</span>
         </div>
         <div class="discount">
           <span>Rabatt</span>
           <span>-0kr</span>
         </div>
-        <br />
-        <p class="line"></p>
-        <!--Linje som skiljer texten åt-->
-        <br />
-        <div class="tax">
-          <span>Moms</span>
-          <span>0kr</span>
-        </div>
+
+        <br>
+        <p class="line"></p> <!--Linje som skiljer texten åt-->
+        <br>
         <div class="totalPrice">
-          <p>Totalt</p>
-          <p>0kr</p>
+          <p>Att betala</p>
+          <p class="totalSummary">0</p>
         </div>
         <div class="orderButton">
           <a href="#form"><button class="order">Till beställning</button></a>
