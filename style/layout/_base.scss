@@ -1,6 +1,7 @@
-// Här kodar vi för mobilvyn.
+/*Här kodar vi för mobilvyn.*/
+
 body {
-  font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 header {
@@ -10,20 +11,23 @@ header {
   width: 100vw;
 }
 
-// Dekoration till länkar
+/*Dekoration till länkar*/
 a {
   text-decoration: none;
   color: black;
 }
 
 h1 {
-  font-size: 1.5rem;
-  display: inline;
-  position: relative;
-  align-items: center;
-  display: table-cell;
-  vertical-align: middle;
-  left: 10px;
+    font-size: 1.5rem;
+    display: inline;
+    position: relative;
+    align-items: center;
+    display: table-cell;
+    vertical-align: middle;
+    left: 10px;
+    font-family: 'Jua', sans-serif;
+    color: #eb61a6;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 .container {
@@ -159,7 +163,7 @@ nav.open {
   visibility: hidden;
 }
 
-// Kundkorg
+/*Kundkorg*/
 
 .summary {
 
@@ -231,7 +235,7 @@ nav.open {
     
 }
 
-// Kort och faktura under denna rad är osynlig fram tills att betalningssätt har valts.
+/* Kort och faktura under denna rad är osynlig fram tills att betalningssätt har valts.*/
 .invoice {
   display: none;
 }
@@ -240,7 +244,7 @@ nav.open {
   display: none;
 }
 
-// Style sortering och filter
+/* Style sortering och filter*/
 #sort {
   appearance: none;
   border: none;
@@ -257,7 +261,7 @@ nav.open {
   align-items: center;
   margin-bottom: 10px;
 }
-// denna ska visas med hjälp av JavaScript
+/* denna ska visas med hjälp av JavaScript*/
 .filter-range {
   text-align: right;
   display: none;
@@ -265,4 +269,8 @@ nav.open {
 
 .filter {
   cursor: pointer;
+}
+/*Orderbekräftelsen*/
+.orderSummary {
+    display: none;
 }
