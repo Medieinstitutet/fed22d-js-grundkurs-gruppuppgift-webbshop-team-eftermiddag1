@@ -108,9 +108,13 @@ function renderDonuts() {
     donutContainer.innerHTML += `
             <section>
             <h3>${donuts[i].name}</h3>
-            <img src="${donuts[i].Image}" width="200" height="200" class="img1"/>
-            <img src="${donuts[i].Image2}" width="200" height="200" class="img2"/>
-            <div>
+            <div class="donutContainer">
+              <img id="img1" src="${donuts[i].Image}" width="200" height="200"/>
+              <img id="img2" src="${donuts[i].Image2}" width="200" height="200"/>
+            </div>
+            <div class="slideshowBtn">
+              <button id="leftArrow"><span class="left"><i class="fa-solid fa-chevron-left"></i></span></button>
+              <button id="rightArrow"><span class="right"><i class="fa-solid fa-chevron-right"></i></span></button>
             </div>
             <p>${donuts[i].price}kr</p>
             <button class="plus" data-id=${i}>+</button>
@@ -120,6 +124,7 @@ function renderDonuts() {
     `
   }
 
+  
   
   document.querySelectorAll('button.plus').forEach((btn) => {
     btn.addEventListener('click', updateDonutAmount);
@@ -185,6 +190,24 @@ function decreaseDonutAmount(e) {
 
 renderDonuts();
 
+const rightArrow = document.querySelectorAll('#rightArrow');
+const leftArrow = document.querySelectorAll('#leftArrow');
+
+for(let i = 0; i < leftArrow.length; i++){
+  leftArrow[i].addEventListener('click', swap);
+  rightArrow[i].addEventListener('click', swap);
+}
+
+function swap(e){
+  const image1 =e.currentTarget.parentElement.parentElement.querySelector('#img1');
+  const image2 =e.currentTarget.parentElement.parentElement.querySelector('#img2');
+
+  const donut1 = image1.getAttribute('src');
+  const donut2 = image2.getAttribute('src');
+
+  image1.setAttribute('src', donut2);
+  image2.setAttribute('src', donut1); 
+};
 
 
 
