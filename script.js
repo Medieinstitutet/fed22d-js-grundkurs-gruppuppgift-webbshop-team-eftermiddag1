@@ -2,6 +2,7 @@
 const discountSum = document.getElementById('discountSum');
 const today = new Date();
 const isLucia = today.getMonth() === 11 && today.getDate() === 13;
+let shippingCostFunction = value => Math.round((25 + 0.1 * value) * 100) / 100;
 
 // Menyknapp
 const menuButton = document.querySelector('.menuButton');
@@ -168,12 +169,22 @@ function renderDonuts() {
 
   printOrderedDonuts();
 
+  if (sumAmount > 15) {
+    shippingCostFunction = () => 0;
+  } else {
+    shippingCostFunction = value => Math.round((25 + 0.1 * value) * 100) / 100;
+  }
+
   const discount = discountFunction(sum);
+  const shippingCost = shippingCostFunction(sum - discount);
 
   document.querySelector('.price').innerHTML = sum + ' kr';
   document.querySelector('.priceSummary').innerHTML = sum + ' kr';
-  document.querySelector('.totalSummary').innerHTML = sum - discount + ' kr';
+  document.querySelector('.totalSummary').innerHTML =
+    sum + shippingCost - discount + ' kr';
   document.querySelector('.amount').innerHTML = sumAmount;
+
+  document.querySelector('.shippingSum').innerHTML = shippingCost + ' kr';
 
   discountSum.innerHTML = discount + ' kr';
 }
@@ -208,7 +219,6 @@ function updateDonutAmount(e) {
   price.classList.toggle('open');
   donuts[donutClicked].amount += 1;
 
-  console.log(donuts);
   renderDonuts();
 }
 
@@ -389,6 +399,7 @@ function validateDiscountCode() {
   const discountCode = discountCodeField.value;
   if (discountCode === 'a_damn_fine-cup_of-coffee') {
     discountFunction = value => value;
+    shippingCostFunction = () => 0;
     renderDonuts();
   }
 }
