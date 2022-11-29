@@ -41,7 +41,7 @@ const donuts = [
     Image2:'./images/apricots.jpg',
   },
   {
-    name: 'Donut Classic',
+    name: 'Classic',
     price: 15,
     amount: 0,
     Image:'./images/cake_donut.jpg',
@@ -106,7 +106,7 @@ function renderDonuts() {
 
   for (let i = 0; i < donuts.length; i++) {
     donutContainer.innerHTML += `
-            <section>
+            <section class="sectionDonut">
             <h3>${donuts[i].name}</h3>
             <div class="donutContainer">
               <img id="img1" src="${donuts[i].Image}" width="200" height="200"/>

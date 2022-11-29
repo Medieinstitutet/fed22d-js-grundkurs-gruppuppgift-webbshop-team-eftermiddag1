@@ -165,14 +165,26 @@ nav.open {
 
 // Munkblock
 
-.munkContainer {
-    text-align: center;
+.sectionDonut {
+  text-align: center;
+  border: 1px solid;
+  margin-bottom: 30px;
+  background-color: #91f89b;
+}
+
+.sectionDonut #img1 {
+  position: relative;
+  left: 25%;
 }
 
 .donutContainer {
     position: relative;
     margin: auto;
     display: flex;
+}
+
+#img1 {
+  border-radius: 20%;
 }
 
 #img2 {
@@ -301,6 +313,10 @@ nav.open {
 
 
 // Kort och faktura under denna rad är osynlig fram tills att betalningssätt har valts.
+
+#form {
+  text-align: center;
+}
 .invoice {
   display: none;
 }
