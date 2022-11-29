@@ -5,10 +5,10 @@ body {
 }
 
 header {
-  outline: 1px solid;
   height: 4rem;
   display: table;
   width: 100vw;
+  background: #34495e;
 }
 
 /*Dekoration till länkar*/
@@ -18,16 +18,21 @@ a {
 }
 
 h1 {
-    font-size: 1.5rem;
-    display: inline;
-    position: relative;
-    align-items: center;
-    display: table-cell;
-    vertical-align: middle;
-    left: 10px;
-    font-family: 'Jua', sans-serif;
-    color: #eb61a6;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  font-size: 1.5rem;
+  display: inline;
+  position: relative;
+  align-items: center;
+  display: table-cell;
+  vertical-align: middle;
+  left: 10px;
+  font-family: 'Jua', sans-serif;
+  color: #eb61a6;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  
+}
+
+.shoppingCart .fa-solid {
+    color: white;
 }
 
 .container {
@@ -46,7 +51,7 @@ h1 {
 }
 
 .amount {
-    background-color: red;
+    background-color: rgb(248, 108, 108);
     font-weight: bold;
     font-size: 1rem;
     width: 1rem;
@@ -68,6 +73,7 @@ h1 {
     font-size: 1.5rem;
     position: relative;
     display: none;
+    color: white;
 }
 
 .price.open {
@@ -85,7 +91,7 @@ h1 {
 
 .menuButton span {
   display: block;
-  background-color: black;
+  background-color: white;
   height: 4px;
   width: 25px;
   margin-bottom: 4px;
@@ -95,7 +101,7 @@ h1 {
 .nav {
   width: 55vw;
   height: 100vh;
-  background-color: rgb(88, 145, 145);
+  background-color: #34495e;
   position: fixed;
   top: 0px;
   right: -100%;
@@ -110,12 +116,6 @@ nav.open {
 .nav ul li {
   border-bottom: 2px solid rgba(0, 0, 0, 0.05);
   border-top: 2px solid rgba(225, 225, 225, 0.05);
-}
-
-.fa-regular {
-  font-size: 2rem;
-  position: relative;
-  top: 0.5rem;
 }
 
 .closeMenu {
@@ -136,6 +136,10 @@ nav.open {
   top: 2rem;
   font-size: 2rem;
   padding: 0;
+}
+
+.selection li {
+    color: white;
 }
 
 .container2 {
@@ -163,13 +167,66 @@ nav.open {
   visibility: hidden;
 }
 
-/*Kundkorg*/
+
+// Munkblock
+
+.sectionDonut {
+  text-align: center;
+  border: 1px solid;
+  margin-bottom: 30px;
+  background-color: #91f89b;
+}
+
+.sectionDonut #img1 {
+  position: relative;
+  left: 25%;
+}
+
+.donutContainer {
+    position: relative;
+    margin: auto;
+    display: flex;
+}
+
+#img1 {
+  border-radius: 20%;
+}
+
+#img2 {
+    opacity: 0;
+    position: relative;
+}
+
+.slideshowBtn {
+    position: relative;
+    margin: auto;
+    color: black;
+}
+
+#leftArrow {
+    background: transparent;
+    border: 0;
+}
+
+#rightArrow {
+    background: transparent;
+    border: 0;
+}
+
+// Kundkorg
+
+.fa-regular {
+    font-size: 2rem;
+    position: relative;
+    top: 0.5rem;
+    color: white;
+  }
 
 .summary {
 
     width: 100vw;
     height: 100vh;
-    background-color: rgb(158, 165, 165);
+    background-color: #34495e;
     position: fixed;
     top: 0px;
     right: -110%;
@@ -178,7 +235,7 @@ nav.open {
 }
 
 .summary.open {
-  right: 0%;
+  right: 3%;
 }
 
 .summary span {
@@ -195,6 +252,13 @@ nav.open {
   justify-content: center;
 }
 
+.order {
+    border-radius: 10%;
+    background-color: greenyellow;
+    font-weight: bold;
+    height: 2rem;
+}
+
 .closeSummary {
 
     background: transparent;
@@ -206,16 +270,19 @@ nav.open {
 .cartText {
     position: relative;
     text-align: center;
+    color: white;
 
 }
 .amountProducts {
   display: flex;
   justify-content: space-around;
+  color: white;
 }
 
 .discount {
   display: flex;
   justify-content: space-around;
+  color: white;
 }
 
 
@@ -228,37 +295,33 @@ nav.open {
 .totalPrice {
   display: flex;
   justify-content: space-around;
+  color: white;
 }
 
 .donutsOrdered {
     text-align: center;
-    
 }
 
-#img2 {
-    opacity: 0;
-}
-
-.donutContainer {
+.donutSum {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-.slideshowBtn {
-    position: relative;
-    left: 4rem;
+.orderedDonuts {
+    color: white;
 }
 
-#leftArrow {
-    background: transparent;
-    border: 0;
+.amountDonut {
+    color: white;
 }
 
-#rightArrow {
-    background: transparent;
-    border: 0;
-}
 
 // Kort och faktura under denna rad är osynlig fram tills att betalningssätt har valts.
+
+#form {
+  text-align: center;
+}
 .invoice {
   display: none;
 }

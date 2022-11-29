@@ -1,5 +1,21 @@
 // Här lägger vi till koden för att anpassa layouten för desktop.
-h1 {
-    display: flex;
+
+.munkContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.slideshowBtn {
+    position: relative;
+    color: black;
+}
+
+.sectionDonut {
     text-align: center;
+}
+
+.sectionDonut #img1 {
+    position: relative;
+    left: 25%;
 }

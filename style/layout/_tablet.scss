@@ -1,1 +1,20 @@
 // Här lägger vi till kod för att anpassa layouten för surfplattor.
+
+.munkContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.summary.open {
+    right: 0%;
+}
+
+.sectionDonut {
+    text-align: center;
+    margin-right: 20px;
+}
+
+.sectionDonut #img1 {
+    position: relative;
+    left: 25%;
+}

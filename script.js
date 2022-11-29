@@ -26,8 +26,8 @@ function summaryOpen() {
 
 const initialDonuts = [
   {
-    name: 'Munk1',
-    price: 10,
+    name: 'Almond',
+    price: 23,
     amount: 0,
     category: 'glazed',
     rating: 3,
@@ -35,7 +35,8 @@ const initialDonuts = [
     Image2: './images/almonds.jpg',
   },
   {
-    name: 'Munk2',
+
+    name: 'Apricot',
     price: 12,
     amount: 0,
     category: 'sugar',
@@ -44,7 +45,7 @@ const initialDonuts = [
     Image2: './images/apricots.jpg',
   },
   {
-    name: 'Munk3',
+    name: 'Classic',
     price: 14,
     amount: 0,
     category: 'sugar',
@@ -53,7 +54,7 @@ const initialDonuts = [
     Image2: './images/cake_donut_dough.jpg',
   },
   {
-    name: 'Munk4',
+    name: 'Choco',
     price: 16,
     amount: 0,
     category: 'glazed',
@@ -62,7 +63,7 @@ const initialDonuts = [
     Image2: './images/donut_choco_sweets_crumble.jpg',
   },
   {
-    name: 'Munk5',
+    name: 'Caramel',
     price: 18,
     amount: 0,
     category: 'glazed',
@@ -71,7 +72,7 @@ const initialDonuts = [
     Image2: './images/chocolate_caramel.jpg',
   },
   {
-    name: 'Munk6',
+    name: 'Cute Bear',
     price: 20,
     amount: 0,
     category: 'glazed',
@@ -80,7 +81,7 @@ const initialDonuts = [
     Image2: './images/cute_bear.jpg',
   },
   {
-    name: 'Munk7',
+    name: 'Strawberry',
     price: 15,
     amount: 0,
     category: 'glazed',
@@ -89,7 +90,7 @@ const initialDonuts = [
     Image2: './images/strawberry_pink_icing_donut.jpg',
   },
   {
-    name: 'Munk8',
+    name: 'Dark Chocolate',
     price: 13,
     amount: 0,
     category: 'sprinkled',
@@ -98,7 +99,7 @@ const initialDonuts = [
     Image2: './images/chocolate_dark.jpg',
   },
   {
-    name: 'Munk9',
+    name: 'Vanilla',
     price: 20,
     amount: 0,
     category: 'sprinkled',
@@ -107,7 +108,7 @@ const initialDonuts = [
     Image2: './images/vanilla_flower.jpg',
   },
   {
-    name: 'Munk10',
+    name: 'Candy sprinkles',
     price: 17,
     amount: 0,
     category: 'sprinkled',
@@ -126,7 +127,7 @@ function renderDonuts() {
 
   for (let i = 0; i < donuts.length; i++) {
     donutContainer.innerHTML += `
-            <section>
+            <section class="sectionDonut">
             <h3>${donuts[i].name}</h3>
             <div class="donutContainer">
               <img id="img1" src="${donuts[i].Image}" width="200" height="200"/>
@@ -136,7 +137,7 @@ function renderDonuts() {
               <button id="leftArrow"><span class="left"><i class="fa-solid fa-chevron-left"></i></span></button>
               <button id="rightArrow"><span class="right"><i class="fa-solid fa-chevron-right"></i></span></button>
             </div>
-            <p>${donuts[i].price}kr</p>
+            <p>${donuts[i].price}kr/st</p>
             <button class="plus" data-id=${i}>+</button>
             <input value="${donuts[i].amount}"/>
             <button class="minus" data-id=${i}>-</button>
@@ -174,8 +175,11 @@ function printOrderedDonuts() {
   for (let i = 0; i < donuts.length; i++) {
     if (donuts[i].amount > 0) {
       document.querySelector('.donutsOrdered').innerHTML += `
+      <div class="donutSum">
+      <img id="img1" src="${donuts[i].Image}" width="80" height="80"/>
       <span class="orderedDonuts">${donuts[i].name}</span>
       <span class="amountDonut">${donuts[i].amount}st</span>
+      </div>
       `;
     }
   }
@@ -220,8 +224,10 @@ function swap(e) {
   const donut2 = image2.getAttribute('src');
 
   image1.setAttribute('src', donut2);
-  image2.setAttribute('src', donut1);
-}
+  image2.setAttribute('src', donut1); 
+
+};
+
 
 // Kort eller faktura samt beställningsformulär
 const invoiceButton = document.querySelector('#invoice');
