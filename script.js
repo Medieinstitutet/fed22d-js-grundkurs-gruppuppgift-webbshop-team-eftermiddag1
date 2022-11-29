@@ -1,5 +1,7 @@
 // Globalt
 const discountSum = document.getElementById('discountSum');
+const today = new Date();
+const isLucia = today.getMonth() === 11 && today.getDate() === 13;
 
 // Menyknapp
 const menuButton = document.querySelector('.menuButton');
@@ -189,6 +191,15 @@ function printOrderedDonuts() {
       </div>
       `;
     }
+  }
+
+  if (isLucia) {
+    document.querySelector('.donutsOrdered').innerHTML += `
+      <div class="donutSum">
+      <span class="orderedDonuts">Luciamunk</span>
+      <span class="amountDonut">1 st</span>
+      </div>
+      `;
   }
 }
 
