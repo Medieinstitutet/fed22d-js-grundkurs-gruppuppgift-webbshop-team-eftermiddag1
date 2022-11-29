@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Snaskköpings bästa munkar" />
     <link rel="stylesheet" href="style/style.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/23db980bb0.js" crossorigin="anonymous"></script>
 
     <title>Gottfrids Munkfabrik</title>
-  </head>
+</head>
 
   <!-- Allt under denna kommentar syns på sidan -->
 
@@ -23,7 +24,7 @@
         <!--Ikon kundvagn-->
 
         <div class="cartContainer">
-          <a href="#" class="shoppingCart" >
+          <a href="#" class="shoppingCart">
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
           <span class="amount"></span>
@@ -31,7 +32,6 @@
 
         <!--När en munk läggs till i kundvagnen ska totalpriset dyka upp-->
         <span class="price">0kr</span>
-        
 
         <!-- Knappen till hamburgarmenyn -->
         <button class="menuButton" aria-label="menu">
@@ -92,17 +92,17 @@
           <div class="filter"><i class="fa-solid fa-filter"></i>Filtrera på pris</div>
         </div>
         <div class="filter-range">
-          <input type="number" min="0" max="50" name="minPrice" /> kr -
-          <input type="number" min="0" max="50" name="maxPrice" /> kr
-          <input type="button" value="Visa resultat" />
+          <span>0 kr</span>
+          <input id="priceRange" type="range" value="20" min="0" max="20" name="priceRange" /><span id="maxPrice"
+            >20 kr</span
+          >
         </div>
       </div>
 
       <!--Munkar-->
       <section>
         <div class="munkContainer"></div>
-      </section>  
-
+      </section>
 
       <!--Produktöversikt-->
       <section class="summary">
@@ -111,6 +111,7 @@
         </button>
         <h2 class="cartText">Kundkorg</h2>
         <!--Här ska munkarna komma upp efter att ha lagt till dom i kundkorgen-->
+
         <div class="donutsOrdered">
       
         </div>
@@ -128,15 +129,16 @@
           <span>-0kr</span>
         </div>
 
-        <br>
-        <p class="line"></p> <!--Linje som skiljer texten åt-->
-        <br>
+        <br />
+        <p class="line"></p>
+        <!--Linje som skiljer texten åt-->
+        <br />
         <div class="totalPrice">
           <p>Att betala</p>
           <p class="totalSummary">0</p>
         </div>
         <div class="orderButton">
-          <a href="#form"><button class="order">Till beställning</button></a>
+          <link href="#form"><button class="order">Till beställning</button>
         </div>
         <br>
       </section>
@@ -205,6 +207,7 @@
         <input type="submit" value="Skicka beställning" id="submitButton" disabled /><br />
         <input type="button" value="Rensa beställning" id="clearOrderButton" />
       </form>
+          <div class="orderSummary"></div>
     </main>
     <footer></footer>
     <script src="script.js"></script>
