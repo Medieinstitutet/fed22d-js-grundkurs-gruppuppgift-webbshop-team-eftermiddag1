@@ -1,3 +1,6 @@
+// Globalt
+const discountSum = document.getElementById('discountSum');
+
 // Menyknapp
 const menuButton = document.querySelector('.menuButton');
 const menuClose = document.querySelector('.closeMenu');
@@ -35,7 +38,6 @@ const initialDonuts = [
     Image2: './images/almonds.jpg',
   },
   {
-
     name: 'Apricot',
     price: 12,
     amount: 0,
@@ -118,6 +120,7 @@ const initialDonuts = [
   },
 ];
 let donuts = initialDonuts;
+let discountFunction = () => 0;
 
 const donutContainer = document.querySelector('.munkContainer');
 const price = document.querySelector('.price');
@@ -163,10 +166,14 @@ function renderDonuts() {
 
   printOrderedDonuts();
 
-  document.querySelector('.price').innerHTML = sum + 'kr';
-  document.querySelector('.priceSummary').innerHTML = sum;
-  document.querySelector('.totalSummary').innerHTML = sum;
+  const discount = discountFunction(sum);
+
+  document.querySelector('.price').innerHTML = sum + ' kr';
+  document.querySelector('.priceSummary').innerHTML = sum + ' kr';
+  document.querySelector('.totalSummary').innerHTML = sum - discount + ' kr';
   document.querySelector('.amount').innerHTML = sumAmount;
+
+  discountSum.innerHTML = discount + ' kr';
 }
 
 function printOrderedDonuts() {
@@ -224,10 +231,8 @@ function swap(e) {
   const donut2 = image2.getAttribute('src');
 
   image1.setAttribute('src', donut2);
-  image2.setAttribute('src', donut1); 
-
-};
-
+  image2.setAttribute('src', donut1);
+}
 
 // Kort eller faktura samt beställningsformulär
 const invoiceButton = document.querySelector('#invoice');
@@ -362,3 +367,17 @@ function initSummary() {
   orderSummary.style.display = 'inline-block';
 }
 submitButton.addEventListener('click', initSummary);
+
+// Rabatter
+const discountCodeField = document.getElementById('discountCode');
+const discountCodeButton = document.getElementById('discountCodeButton');
+
+discountCodeButton.addEventListener('click', validateDiscountCode);
+
+function validateDiscountCode() {
+  const discountCode = discountCodeField.value;
+  if (discountCode === 'a_damn_fine-cup_of-coffee') {
+    discountFunction = value => value;
+    renderDonuts();
+  }
+}
