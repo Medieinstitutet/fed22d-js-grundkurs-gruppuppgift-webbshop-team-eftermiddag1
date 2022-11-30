@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Snaskköpings bästa munkar" />
     <link rel="stylesheet" href="style/style.css" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/23db980bb0.js" crossorigin="anonymous"></script>
 
     <title>Gottfrids Munkfabrik</title>
-</head>
+  </head>
 
   <!-- Allt under denna kommentar syns på sidan -->
 
@@ -93,8 +93,8 @@
         </div>
         <div class="filter-range">
           <span>0 kr</span>
-          <input id="priceRange" type="range" value="20" min="0" max="20" name="priceRange" /><span id="maxPrice"
-            >20 kr</span
+          <input id="priceRange" type="range" value="23" min="0" max="23" name="priceRange" /><span id="maxPrice"
+            >23 kr</span
           >
         </div>
       </div>
@@ -112,21 +112,24 @@
         <h2 class="cartText">Kundkorg</h2>
         <!--Här ska munkarna komma upp efter att ha lagt till dom i kundkorgen-->
 
-        <div class="donutsOrdered">
-      
-        </div>
-        <br>
-        <p class="line"></p> <!--Linje som skiljer texten åt-->
-        <br>
-        <br>
-        <br>
+        <div class="donutsOrdered"></div>
+        <br />
+        <p class="line"></p>
+        <!--Linje som skiljer texten åt-->
+        <br />
+        <br />
+        <br />
         <div class="amountProducts">
           <span>Summa</span>
           <span class="priceSummary">0</span>
         </div>
+        <div class="shipping">
+          <span>Frakt</span>
+          <span class="shippingSum">0 kr</span>
+        </div>
         <div class="discount">
           <span>Rabatt</span>
-          <span>-0kr</span>
+          <span id="discountSum">-0 kr</span>
         </div>
 
         <br />
@@ -137,10 +140,8 @@
           <p>Att betala</p>
           <p class="totalSummary">0</p>
         </div>
-        <div class="orderButton">
-          <link href="#form"><button class="order">Till beställning</button>
-        </div>
-        <br>
+        <div class="orderButton"><link href="#form" /><button class="order">Till beställning</button></div>
+        <br />
       </section>
 
       <!-- Här kan vi skapa produktsammanställningen! -->
@@ -193,7 +194,12 @@
           <input type="number" id="cvc" name="cvc" pattern="[0-9]{3}" /><br />
         </div>
 
-        <label for="discountCode">Rabattkod:</label><input type="text" id="discountCode" name="discountCode" /> <br />
+        <label for="discountCode">Rabattkod:</label><input type="text" id="discountCode" name="discountCode" /><input
+          type="button"
+          id="discountCodeButton"
+          value="Lägg till"
+        />
+        <br />
 
         <input type="checkbox" id="approvalGDPR" name="approvalGDPR" required /><label for="approvalGDPR">
           Jag godkänner att mina personuppgifter lagras.
@@ -207,7 +213,7 @@
         <input type="submit" value="Skicka beställning" id="submitButton" disabled /><br />
         <input type="button" value="Rensa beställning" id="clearOrderButton" />
       </form>
-          <div class="orderSummary"></div>
+      <div class="orderSummary"></div>
     </main>
     <footer></footer>
     <script src="script.js"></script>
