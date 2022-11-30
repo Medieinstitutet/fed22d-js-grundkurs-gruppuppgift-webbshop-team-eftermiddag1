@@ -1,22 +1,31 @@
 /*Här kodar vi för mobilvyn.*/
 
 body {
-
-    font-family: 'Josefin Sans', sans-serif;
-    background-color: #ebedef;
-
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #ebedef;
 }
 
 header {
-    height: 4rem;
-    display: table;
-    width: 100vw;
-    background: #34495e;
-    margin-bottom:1rem;
-    box-sizing:border-box;
+  height: 4rem;
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: flex-start;
+  align-items: center;
+  background: #34495e;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  z-index: 1;
 }
+
+.header-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
 i {
-    margin: 0.3rem;
+  margin: 0.3rem;
 }
 
 /*Dekoration till länkar*/
@@ -37,50 +46,48 @@ h1 {
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 .kampanj {
-    font-size: 2rem;
-    font-family: 'Josefin sans', sans-serif;
-    color: #34495e;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  font-size: 2rem;
+  font-family: 'Josefin sans', sans-serif;
+  color: #34495e;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 .shoppingCart .fa-solid {
   color: white;
 }
 .donutIcon {
-display: none;
+  display: none;
 }
 .container {
-  position: relative;
-  height: 4rem;
+  position: absolute;
   display: flex;
   align-items: center;
-  gap: 3px;
-  right: 20px;
+  gap: 10px;
+  right: 0;
+  margin: 0 20px;
 }
 
 .cartContainer {
-  width: 30px;
-  height: 30px;
+  position: relative;
 }
 
 .amount {
-
-    background-color: rgb(248, 108, 108);
-    font-weight: bold;
-    font-size: 1rem;
-    width: 1rem;
-    position: absolute;
-    top: 8px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-
+  background-color: rgb(248, 108, 108);
+  font-weight: bold;
+  font-size: 1rem;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -5px;
+  right: -5px;
 }
 
 .shoppingCart {
   font-size: 1.4rem;
   position: relative;
-  right: 25px;
-  top: 15px;
 }
 
 .price {
@@ -95,13 +102,9 @@ display: none;
 }
 
 .menuButton {
-  width: 35px;
-  height: 35px;
   border: 0px;
   background: transparent;
-  position:absolute;
-  right: 10px;
-  top: 15px;
+  cursor: pointer;
 }
 
 .menuButton span {
@@ -109,7 +112,7 @@ display: none;
   background-color: white;
   height: 4px;
   width: 25px;
-  margin-bottom: 4px;
+  margin: 4px 0;
   border-radius: 4px;
 }
 
@@ -180,7 +183,7 @@ nav.open {
   border-radius: 50px;
 }
 .searchbox:hover {
-    outline-color: #eb61a6;
+  outline-color: #eb61a6;
 }
 
 // Munkblock
@@ -287,6 +290,7 @@ nav.open {
   text-align: center;
   color: white;
 }
+
 .amountProducts,
 .discount,
 .shipping {
@@ -340,16 +344,16 @@ nav.open {
 
 /* Style sortering och filter*/
 #sort {
-    appearance: none;
-    border: none;
-    cursor: pointer;
-    background-color: #ebedef;
-    font-size: 1.2rem;
-    color: #34495e;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background-color: #ebedef;
+  font-size: 1.2rem;
+  color: #34495e;
 }
 .filter {
-    font-size: 1.2rem;
-    color: #34495e;
+  font-size: 1.2rem;
+  color: #34495e;
 }
 .sort-filter {
   margin: 15px;
@@ -361,13 +365,14 @@ nav.open {
   align-items: center;
   margin-bottom: 10px;
 }
-.fa-sort, .fa-filter{
-    color: #34495e;
+.fa-sort,
+.fa-filter {
+  color: #34495e;
 }
 /* denna ska visas med hjälp av JavaScript*/
 .filter-range {
-    text-align: right;
-    display: none;
+  text-align: right;
+  display: none;
 }
 
 .filter {

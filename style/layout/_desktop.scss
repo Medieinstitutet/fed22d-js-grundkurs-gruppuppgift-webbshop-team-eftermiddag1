@@ -1,15 +1,12 @@
 // Här lägger vi till koden för att anpassa layouten för desktop.
 h1 {
   font-size: 2.5rem;
-  display: inline;
-  position: relative;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  font-family: 'Jua', sans-serif;
-  color: #eb61a6;
-  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
+
+header {
+  justify-content: center;
+}
+
 .munkContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -18,9 +15,6 @@ h1 {
 
 .donutIcon {
   display: block;
-  position: absolute;
-  left: 65%;
-  top: 8px;
 }
 
 .slideshowBtn {
@@ -37,6 +31,7 @@ h1 {
   font-size: 1.2rem;
   border: 3px solid #34495e;
 }
+
 h3 {
   font-size: 2rem;
   font-family: 'Josefin sans', sans-serif;
