@@ -17,30 +17,29 @@
   <!-- Allt under denna kommentar syns på sidan -->
 
   <body>
-    <header>
-      <h1>Gottfrids Munkfabrik</h1>
+      <header>
+          <h1>Gottfrids Munkfabrik</h1>
+          <img class="donutIcon" src="./images/donutIcon.png" width="50px" height="auto";
+          <div class="container">
+              <!--Ikon kundvagn-->
+              <div class="cartContainer">
+                  <a href="#" class="shoppingCart">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                  </a>
+                  <span class="amount"></span>
+              </div>
 
-      <div class="container">
-        <!--Ikon kundvagn-->
+              <!--När en munk läggs till i kundvagnen ska totalpriset dyka upp-->
+              <span class="price">0kr</span>
 
-        <div class="cartContainer">
-          <a href="#" class="shoppingCart">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </a>
-          <span class="amount"></span>
-        </div>
-
-        <!--När en munk läggs till i kundvagnen ska totalpriset dyka upp-->
-        <span class="price">0kr</span>
-
-        <!-- Knappen till hamburgarmenyn -->
-        <button class="menuButton" aria-label="menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </header>
+              <!-- Knappen till hamburgarmenyn -->
+              <button class="menuButton" aria-label="menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </button>
+          </div>
+      </header>
 
     <!-- Innanför nav lägger vi till vad som ska finnas i hamburgarmenyn -->
     <nav class="nav">
@@ -64,18 +63,9 @@
       </section>
 
       <!--Kampanj-->
-      <section>Kampanj</section>
       <div>
-        <h2>Köp 15 munkar och få gratis frakt!</h2>
+        <h2 class="kampanj">Köp 15 munkar och få gratis frakt!</h2>
       </div>
-
-      <!--Denna div syns när en tidsaktiverad kampanj är aktiv-->
-      <div class="limited-time-campaign">
-        <h2>
-          <!--Texten här varierar beroende på vilken rebatt som gäller då, jag sätter visibility: hidden tills dess-->
-        </h2>
-      </div>
-
       <!--Filtrera och sortera-->
       <div class="sort-filter">
         <div class="sort-filter-actions">
@@ -94,8 +84,7 @@
         <div class="filter-range">
           <span>0 kr</span>
           <input id="priceRange" type="range" value="23" min="0" max="23" name="priceRange" /><span id="maxPrice"
-            >23 kr</span
-          >
+            >23 kr</span>
         </div>
       </div>
 
