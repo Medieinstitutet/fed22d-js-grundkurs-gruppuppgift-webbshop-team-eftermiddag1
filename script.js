@@ -1,3 +1,9 @@
+// Globalt
+const discountSum = document.getElementById('discountSum');
+const today = new Date();
+const isLucia = today.getMonth() === 11 && today.getDate() === 13;
+let shippingCostFunction = value => Math.round((25 + 0.1 * value) * 100) / 100;
+
 // Menyknapp
 const menuButton = document.querySelector(".menuButton");
 const menuClose = document.querySelector(".closeMenu");
@@ -25,98 +31,99 @@ function summaryOpen() {
 }
 
 const initialDonuts = [
-    {
-        name: "Almond",
-        price: 23,
-        amount: 0,
-        category: "glazed",
-        rating: 3,
-        Image: "./images/donut_almond_snack.jpg",
-        Image2: "./images/almonds.jpg",
-    },
-    {
-        name: "Apricot",
-        price: 12,
-        amount: 0,
-        category: "sugar",
-        rating: 4,
-        Image: "./images/donut_apricot_filling.jpg",
-        Image2: "./images/apricots.jpg",
-    },
-    {
-        name: "Classic",
-        price: 14,
-        amount: 0,
-        category: "sugar",
-        rating: 3,
-        Image: "./images/cake_donut.jpg",
-        Image2: "./images/cake_donut_dough.jpg",
-    },
-    {
-        name: "Choco",
-        price: 16,
-        amount: 0,
-        category: "glazed",
-        rating: 5,
-        Image: "./images/donut_choco_sweets_frosting.jpg",
-        Image2: "./images/donut_choco_sweets_crumble.jpg",
-    },
-    {
-        name: "Caramel",
-        price: 18,
-        amount: 0,
-        category: "glazed",
-        rating: 4,
-        Image: "./images/donut_chocolate_caramel.jpg",
-        Image2: "./images/chocolate_caramel.jpg",
-    },
-    {
-        name: "Cute Bear",
-        price: 20,
-        amount: 0,
-        category: "glazed",
-        rating: 5,
-        Image: "./images/donut_cute_bear.jpg",
-        Image2: "./images/cute_bear.jpg",
-    },
-    {
-        name: "Strawberry",
-        price: 15,
-        amount: 0,
-        category: "glazed",
-        rating: 4,
-        Image: "./images/donut_frosted_pink_icing.jpg",
-        Image2: "./images/strawberry_pink_icing_donut.jpg",
-    },
-    {
-        name: "Dark Chocolate",
-        price: 13,
-        amount: 0,
-        category: "sprinkled",
-        rating: 4,
-        Image: "./images/dunkin_chocolate_sprinkled.jpg",
-        Image2: "./images/chocolate_dark.jpg",
-    },
-    {
-        name: "Vanilla",
-        price: 20,
-        amount: 0,
-        category: "sprinkled",
-        rating: 4,
-        Image: "./images/dunkin_vanilla_sprinkled.jpg",
-        Image2: "./images/vanilla_flower.jpg",
-    },
-    {
-        name: "Candy sprinkles",
-        price: 17,
-        amount: 0,
-        category: "sprinkled",
-        rating: 5,
-        Image: "./images/pink_donut_kirby.jpg",
-        Image2: "./images/candy_sprinkles.jpg",
-    },
+  {
+    name: 'Almond',
+    price: 23,
+    amount: 0,
+    category: 'glazed',
+    rating: 3,
+    Image: './images/donut_almond_snack.jpg',
+    Image2: './images/almonds.jpg',
+  },
+  {
+    name: 'Apricot',
+    price: 12,
+    amount: 0,
+    category: 'sugar',
+    rating: 4,
+    Image: './images/donut_apricot_filling.jpg',
+    Image2: './images/apricots.jpg',
+  },
+  {
+    name: 'Classic',
+    price: 14,
+    amount: 0,
+    category: 'sugar',
+    rating: 3,
+    Image: './images/cake_donut.jpg',
+    Image2: './images/cake_donut_dough.jpg',
+  },
+  {
+    name: 'Choco',
+    price: 16,
+    amount: 0,
+    category: 'glazed',
+    rating: 5,
+    Image: './images/donut_choco_sweets_frosting.jpg',
+    Image2: './images/donut_choco_sweets_crumble.jpg',
+  },
+  {
+    name: 'Caramel',
+    price: 18,
+    amount: 0,
+    category: 'glazed',
+    rating: 4,
+    Image: './images/donut_chocolate_caramel.jpg',
+    Image2: './images/chocolate_caramel.jpg',
+  },
+  {
+    name: 'Cute Bear',
+    price: 20,
+    amount: 0,
+    category: 'glazed',
+    rating: 5,
+    Image: './images/donut_cute_bear.jpg',
+    Image2: './images/cute_bear.jpg',
+  },
+  {
+    name: 'Strawberry',
+    price: 15,
+    amount: 0,
+    category: 'glazed',
+    rating: 4,
+    Image: './images/donut_frosted_pink_icing.jpg',
+    Image2: './images/strawberry_pink_icing_donut.jpg',
+  },
+  {
+    name: 'Dark Chocolate',
+    price: 13,
+    amount: 0,
+    category: 'sprinkled',
+    rating: 4,
+    Image: './images/dunkin_chocolate_sprinkled.jpg',
+    Image2: './images/chocolate_dark.jpg',
+  },
+  {
+    name: 'Vanilla',
+    price: 20,
+    amount: 0,
+    category: 'sprinkled',
+    rating: 4,
+    Image: './images/dunkin_vanilla_sprinkled.jpg',
+    Image2: './images/vanilla_flower.jpg',
+  },
+  {
+    name: 'Candy sprinkles',
+    price: 17,
+    amount: 0,
+    category: 'sprinkled',
+    rating: 5,
+    Image: './images/pink_donut_kirby.jpg',
+    Image2: './images/candy_sprinkles.jpg',
+  },
 ];
 let donuts = initialDonuts;
+let discountFunction = () => 0;
 
 const donutContainer = document.querySelector(".munkContainer");
 const price = document.querySelector(".price");
@@ -162,10 +169,24 @@ function renderDonuts() {
 
     printOrderedDonuts();
 
-    document.querySelector(".price").innerHTML = sum + "kr";
-    document.querySelector(".priceSummary").innerHTML = sum;
-    document.querySelector(".totalSummary").innerHTML = sum;
-    document.querySelector(".amount").innerHTML = sumAmount;
+  if (sumAmount > 15) {
+    shippingCostFunction = () => 0;
+  } else {
+    shippingCostFunction = value => Math.round((25 + 0.1 * value) * 100) / 100;
+  }
+
+  const discount = discountFunction(sum);
+  const shippingCost = shippingCostFunction(sum - discount);
+
+  document.querySelector('.price').innerHTML = sum + ' kr';
+  document.querySelector('.priceSummary').innerHTML = sum + ' kr';
+  document.querySelector('.totalSummary').innerHTML =
+    sum + shippingCost - discount + ' kr';
+  document.querySelector('.amount').innerHTML = sumAmount;
+
+  document.querySelector('.shippingSum').innerHTML = shippingCost + ' kr';
+
+  discountSum.innerHTML = discount + ' kr';
 }
 
 function printOrderedDonuts() {
@@ -182,6 +203,16 @@ function printOrderedDonuts() {
       `;
         }
     }
+  }
+
+  if (isLucia) {
+    document.querySelector('.donutsOrdered').innerHTML += `
+      <div class="donutSum">
+      <span class="orderedDonuts">Luciamunk</span>
+      <span class="amountDonut">1 st</span>
+      </div>
+      `;
+  }
 }
 
 function updateDonutAmount(e) {
@@ -189,8 +220,7 @@ function updateDonutAmount(e) {
     price.classList.toggle("open");
     donuts[donutClicked].amount += 1;
 
-    console.log(donuts);
-    renderDonuts();
+  renderDonuts();
 }
 
 function decreaseDonutAmount(e) {
@@ -219,11 +249,8 @@ function swap(e) {
     const image2 =
         e.currentTarget.parentElement.parentElement.querySelector("#img2");
 
-    const donut1 = image1.getAttribute("src");
-    const donut2 = image2.getAttribute("src");
-
-    image1.setAttribute("src", donut2);
-    image2.setAttribute("src", donut1);
+  image1.setAttribute('src', donut2);
+  image2.setAttribute('src', donut1);
 }
 
 // Kort eller faktura samt beställningsformulär
@@ -358,4 +385,21 @@ function initSummary() {
     orderSummary.innerHTML += `<span>Summa: ${summa}</span>`;
     orderSummary.style.display = "inline-block";
 }
-submitButton.addEventListener("click", initSummary);
+
+submitButton.addEventListener('click', initSummary);
+
+// Rabatter
+const discountCodeField = document.getElementById('discountCode');
+const discountCodeButton = document.getElementById('discountCodeButton');
+
+discountCodeButton.addEventListener('click', validateDiscountCode);
+
+function validateDiscountCode() {
+  const discountCode = discountCodeField.value;
+  if (discountCode === 'a_damn_fine-cup_of-coffee') {
+    discountFunction = value => value;
+    shippingCostFunction = () => 0;
+    renderDonuts();
+  }
+}
+
