@@ -645,6 +645,14 @@ nav.open {
   appearance: none;
   border: none;
   cursor: pointer;
+  background-color: #ebedef;
+  font-size: 1.2rem;
+  color: #34495e;
+}
+
+.filter {
+  font-size: 1.2rem;
+  color: #34495e;
 }
 
 .sort-filter {
@@ -656,6 +664,10 @@ nav.open {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+}
+
+.fa-sort, .fa-filter {
+  color: #34495e;
 }
 
 /* denna ska visas med hjälp av JavaScript*/

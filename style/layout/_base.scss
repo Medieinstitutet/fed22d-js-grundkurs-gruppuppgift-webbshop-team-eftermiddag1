@@ -342,11 +342,17 @@ nav.open {
 
 /* Style sortering och filter*/
 #sort {
-  appearance: none;
-  border: none;
-  cursor: pointer;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    background-color: #ebedef;
+    font-size: 1.2rem;
+    color: #34495e;
 }
-
+.filter {
+    font-size: 1.2rem;
+    color: #34495e;
+}
 .sort-filter {
   margin: 15px;
 }
@@ -357,10 +363,13 @@ nav.open {
   align-items: center;
   margin-bottom: 10px;
 }
+.fa-sort, .fa-filter{
+    color: #34495e;
+}
 /* denna ska visas med hjälp av JavaScript*/
 .filter-range {
-  text-align: right;
-  display: none;
+    text-align: right;
+    display: none;
 }
 
 .filter {
