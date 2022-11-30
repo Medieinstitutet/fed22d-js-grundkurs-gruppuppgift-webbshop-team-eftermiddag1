@@ -2,13 +2,18 @@
 
 body {
     font-family: 'Josefin Sans', sans-serif;
+    background-color: #ebedef;
 }
 
 header {
-  height: 4rem;
-  display: table;
-  width: 100vw;
-  background: #34495e;
+    height: 4rem;
+    display: table;
+    width: 100vw;
+    background: #34495e;
+    margin-bottom:1rem;
+}
+i {
+    margin: 0.3rem;
 }
 
 /*Dekoration till länkar*/
@@ -21,7 +26,6 @@ h1 {
   font-size: 1.5rem;
   display: inline;
   position: relative;
-  align-items: center;
   display: table-cell;
   vertical-align: middle;
   left: 10px;
@@ -29,6 +33,12 @@ h1 {
   color: #eb61a6;
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
   
+}
+.kampanj {
+    font-size: 2rem;
+    font-family: 'Josefin sans', sans-serif;
+    color: #34495e;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 .shoppingCart .fa-solid {
@@ -116,6 +126,8 @@ nav.open {
 .nav ul li {
   border-bottom: 2px solid rgba(0, 0, 0, 0.05);
   border-top: 2px solid rgba(225, 225, 225, 0.05);
+  margin-bottom: 1rem;
+  padding-left: 1rem;
 }
 
 .closeMenu {
@@ -162,11 +174,9 @@ nav.open {
   max-height: fit-content;
   border-radius: 50px;
 }
-
-.limited-time-campaign {
-  visibility: hidden;
+.searchbox:hover {
+    outline-color: #eb61a6;
 }
-
 
 // Munkblock
 

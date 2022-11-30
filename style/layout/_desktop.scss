@@ -1,5 +1,15 @@
 // Här lägger vi till koden för att anpassa layouten för desktop.
-
+h1 {
+    font-size: 2.5rem;
+    display: inline;
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Jua', sans-serif;
+    color: #eb61a6;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
 .munkContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
