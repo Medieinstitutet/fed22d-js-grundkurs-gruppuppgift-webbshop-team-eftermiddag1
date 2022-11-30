@@ -11,6 +11,7 @@ header {
     width: 100vw;
     background: #34495e;
     margin-bottom:1rem;
+    box-sizing:border-box;
 }
 i {
     margin: 0.3rem;
@@ -40,14 +41,14 @@ h1 {
     color: #34495e;
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
-
 .shoppingCart .fa-solid {
     color: white;
 }
-
+.donutIcon {
+display: none;
+}
 .container {
   position: relative;
-  float: right;
   height: 4rem;
   display: flex;
   align-items: center;
@@ -67,7 +68,6 @@ h1 {
     width: 1rem;
     position: absolute;
     top: 8px;
-    left: 15px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -76,6 +76,8 @@ h1 {
 .shoppingCart {
   font-size: 1.4rem;
   position: relative;
+  right: 25px;
+  top: 15px;
 }
 
 .price {
@@ -97,6 +99,9 @@ h1 {
   height: 35px;
   border: 0px;
   background: transparent;
+  position:absolute;
+  right: 10px;
+  top: 15px;
 }
 
 .menuButton span {
@@ -185,6 +190,7 @@ nav.open {
   border: 1px solid;
   margin-bottom: 30px;
   background-color: #91f89b;
+  padding-bottom: 1rem;
 }
 
 .sectionDonut #img1 {
@@ -200,6 +206,8 @@ nav.open {
 
 #img1 {
   border-radius: 20%;
+  width: 200px;
+  height: auto;
 }
 
 #img2 {
