@@ -401,3 +401,16 @@ function validateDiscountCode() {
     renderDonuts();
   }
 }
+
+// dark mode
+const darkModeButton = document.getElementById('darkModeButton');
+
+darkModeButton.addEventListener('click', myFunction);
+
+function myFunction() {
+  document.body.classList.toggle('dark-mode');
+  if (myFunction) darkModeButton.innerHTML = 'Ljust läge';
+  else {
+    darkModeButton.innerHTML = 'Mörkt läge';
+  }
+}

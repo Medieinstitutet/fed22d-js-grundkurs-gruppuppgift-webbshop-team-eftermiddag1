@@ -1,0 +1,43 @@
+// Här stylar vi mörkt läge
+.dark-mode {
+  background-color: #16213e;
+  color: white;
+
+  header {
+    background-color: #0f3460;
+  }
+
+  #darkModeButton {
+    background-color: #533483;
+    color: white;
+  }
+
+  h1,
+  h2,
+  h3,
+  #sort,
+  .filter {
+    color: #e94560;
+  }
+
+  p {
+    color: white;
+  }
+
+  section {
+    background-color: #16213e;
+  }
+
+  i {
+    color: white;
+  }
+
+  .sectionDonut {
+    border: 3px solid #533483;
+  }
+
+  .order {
+    background-color: #533483;
+    color: white;
+  }
+}

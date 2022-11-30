@@ -13,7 +13,7 @@ header {
   justify-content: flex-start;
   align-items: center;
   background: #34495e;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   box-sizing: border-box;
   z-index: 1;
 }
@@ -192,7 +192,6 @@ nav.open {
   text-align: center;
   border: 1px solid;
   margin-bottom: 30px;
-  background-color: #91f89b;
   padding-bottom: 1rem;
 }
 
@@ -255,6 +254,7 @@ nav.open {
 
 .summary.open {
   right: 3%;
+  z-index: 2;
 }
 
 .summary span {
@@ -347,7 +347,7 @@ nav.open {
   appearance: none;
   border: none;
   cursor: pointer;
-  background-color: #ebedef;
+  background-color: transparent;
   font-size: 1.2rem;
   color: #34495e;
 }
@@ -381,4 +381,8 @@ nav.open {
 /*Orderbekräftelsen*/
 .orderSummary {
   display: none;
+}
+
+#darkModeButton {
+  margin: 10px;
 }
