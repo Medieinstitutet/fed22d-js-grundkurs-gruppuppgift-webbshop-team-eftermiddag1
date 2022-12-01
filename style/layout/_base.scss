@@ -197,7 +197,6 @@ nav.open {
 
 .sectionDonut #img1 {
   position: relative;
-  left: 25%;
 }
 
 .donutContainer {
@@ -213,10 +212,13 @@ nav.open {
 }
 
 #img2 {
-  opacity: 0;
-  position: relative;
+    opacity: 0;
+    position: relative;
 }
-
+#img1, #img2 {
+    outline: 2px solid #34495e;
+    margin-bottom: 1rem;
+}
 .slideshowBtn {
   position: relative;
   margin: auto;
@@ -231,6 +233,16 @@ nav.open {
 #rightArrow {
   background: transparent;
   border: 0;
+}
+button.plus, button.minus {
+    border-radius: 10%;
+    background-color: #eb61a6;
+    font-weight: bold;
+    height: 2rem;
+    width: 2rem;
+}
+p {
+    margin:0.8rem 0.8rem;
 }
 
 // Kundkorg

@@ -511,7 +511,6 @@ nav.open {
 
 .sectionDonut #img1 {
   position: relative;
-  left: 25%;
 }
 
 .donutContainer {
@@ -531,6 +530,11 @@ nav.open {
   position: relative;
 }
 
+#img1, #img2 {
+  outline: 2px solid #34495e;
+  margin-bottom: 1rem;
+}
+
 .slideshowBtn {
   position: relative;
   margin: auto;
@@ -545,6 +549,18 @@ nav.open {
 #rightArrow {
   background: transparent;
   border: 0;
+}
+
+button.plus, button.minus {
+  border-radius: 10%;
+  background-color: #eb61a6;
+  font-weight: bold;
+  height: 2rem;
+  width: 2rem;
+}
+
+p {
+  margin: 0.8rem 0.8rem;
 }
 
 .fa-regular {
@@ -790,49 +806,10 @@ nav.open {
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
     margin: 3px;
   }
-  .sectionDonut #img1 {
+  .sectionDonut .img1 {
     position: relative;
     left: 25%;
   }
-  /*.sectionDonut {
-
-
-  .sectionDonut #img1 {
-    position: relative;
-    left: 25%;
-  }
-
-  .donutContainer {
-      position: relative;
-      margin: auto;
-      display: flex;
-  }
-
-  #img1 {
-    border-radius: 20%;
-  }
-
-  #img2 {
-      opacity: 0;
-      position: relative;
-  }
-
-  .slideshowBtn {
-      position: relative;
-      margin: auto;
-      color: black;
-  }
-
-  #leftArrow {
-      background: transparent;
-      border: 0;
-  }
-
-  #rightArrow {
-      background: transparent;
-      border: 0;
-  }
-  */
 }
 
 /*# sourceMappingURL=style.css.map */
