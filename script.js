@@ -29,8 +29,9 @@ orderButton.addEventListener("click", summaryOpen);
 
 function summaryOpen() {
     summary.classList.toggle("open");
+    document.querySelector(".munkContainer").style.display = "none";
 }
-
+//Munkarray
 const initialDonuts = [
     {
         name: "Almond",
@@ -123,6 +124,7 @@ const initialDonuts = [
         Image2: "./images/candy_sprinkles.jpg",
     },
 ];
+//Rita ut munkar
 let donuts = initialDonuts;
 let discountFunction = () => 0;
 
@@ -141,8 +143,8 @@ function renderDonuts() {
               <img class="img2" src="${donuts[i].Image2}" width="200" height="200"/>
             </div>
             <div class="slideshowBtn">
-              <button id="leftArrow"><span class="left"><i class="fa-solid fa-chevron-left"></i></span></button>
-              <button id="rightArrow"><span class="right"><i class="fa-solid fa-chevron-right"></i></span></button>
+              <button class="leftArrow"><span class="left"><i class="fa-solid fa-chevron-left"></i></span></button>
+              <button class="rightArrow"><span class="right"><i class="fa-solid fa-chevron-right"></i></span></button>
             </div>
             <p>${donuts[i].price}kr/st</p>
             <button class="plus" data-id=${i}>+</button>
@@ -151,7 +153,7 @@ function renderDonuts() {
             </section>
     `;
     }
-
+    //plus och minusknappar
     document.querySelectorAll("button.plus").forEach((btn) => {
         btn.addEventListener("click", updateDonutAmount);
     });
@@ -167,7 +169,7 @@ function renderDonuts() {
     const sumAmount = donuts.reduce((previousValue, donut) => {
         return donut.amount + previousValue;
     }, 0);
-
+//Ordersammanställning
     printOrderedDonuts();
 
     if (sumAmount > 15) {
@@ -205,7 +207,6 @@ function printOrderedDonuts() {
       `;
         }
     }
-
     if (isLucia) {
         document.querySelector(".donutsOrdered").innerHTML += `
       <div class="donutSum">
@@ -235,9 +236,9 @@ function decreaseDonutAmount(e) {
 }
 
 renderDonuts();
-
-const rightArrow = document.querySelectorAll("#rightArrow");
-const leftArrow = document.querySelectorAll("#leftArrow");
+//Slideshow
+const rightArrow = document.querySelectorAll(".rightArrow");
+const leftArrow = document.querySelectorAll(".leftArrow");
 
 for (let i = 0; i < leftArrow.length; i++) {
     leftArrow[i].addEventListener("click", swap);
@@ -293,6 +294,7 @@ function showCardFields() {
 
 function resetForm() {
     form.reset();
+    document.querySelector(".munkContainer").style.display = "flex";
 
     for (const donut of donuts) {
         donut.amount = 0;
