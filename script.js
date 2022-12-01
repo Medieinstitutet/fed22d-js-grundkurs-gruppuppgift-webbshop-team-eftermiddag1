@@ -220,8 +220,8 @@ function printOrderedDonuts() {
     if (isLucia) {
         document.querySelector(".donutsOrdered").innerHTML += `
       <div class="donutSum">
-      <span class="orderedDonuts">Luciamunk</span>
-      <span class="amountDonut">1 st</span>
+        <span class="orderedDonuts">Luciamunk</span>
+        <span class="amountDonut">1 st</span>
       </div>
       `;
     }
@@ -419,12 +419,13 @@ function validateDiscountCode() {
 // dark mode
 const darkModeButton = document.getElementById("darkModeButton");
 
-darkModeButton.addEventListener("click", myFunction);
+darkModeButton.addEventListener("click", darkmodeFunction);
 
-function myFunction() {
+function darkmodeFunction() {
     document.body.classList.toggle("dark-mode");
-    if (myFunction) darkModeButton.innerHTML = "Ljust läge";
-    else {
+    if (darkModeButton.innerHTML === "Mörkt läge") {
+        darkModeButton.innerHTML = "Ljust läge";
+    } else {
         darkModeButton.innerHTML = "Mörkt läge";
     }
 }
