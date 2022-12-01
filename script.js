@@ -146,13 +146,23 @@ function renderDonuts() {
               <button class="leftArrow"><span class="left"><i class="fa-solid fa-chevron-left"></i></span></button>
               <button class="rightArrow"><span class="right"><i class="fa-solid fa-chevron-right"></i></span></button>
             </div>
-            <p>${donuts[i].price}kr/st</p>
+            <p class="donutBlockPrice">${donuts[i].price}kr/st</p>
             <button class="plus" data-id=${i}>+</button>
             <input value="${donuts[i].amount}"/>
             <button class="minus" data-id=${i}>-</button>
             </section>
     `;
     }
+    const isXmas = today.getMonth() === 11 && today.getDate() === 24;
+    console.log(today.getMonth());
+    if (isXmas) {
+        document.querySelectorAll(".donutBlockPrice").forEach((element) => {
+            element.style.color = "red";
+        });
+        document.body.style.backgroundImage = "url('images/xmasBackground.jpg')";
+    }
+    
+
     //plus och minusknappar
     document.querySelectorAll("button.plus").forEach((btn) => {
         btn.addEventListener("click", updateDonutAmount);
