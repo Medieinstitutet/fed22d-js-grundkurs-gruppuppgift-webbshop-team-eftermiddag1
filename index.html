@@ -16,7 +16,7 @@
 
     <!-- Allt under denna kommentar syns på sidan -->
 
-    <body>
+    <body id="body">
         <header>
             <div class="header-container">
                 <h1>Gottfrids Munkfabrik</h1>
@@ -49,22 +49,14 @@
                 <i class="fa-regular fa-circle-xmark"></i>
             </button>
             <ul class="selection">
-                <li><i class="fa-solid fa-house"></i>Start</li>
-                <li><i class="fa-solid fa-address-card"></i>Om oss</li>
-                <li><i class="fa-solid fa-address-book"></i>Kontakt</li>
+                <li><a href="#body"><i class="fa-solid fa-house"></i>Start</a></li>
+                <li><a href="#"><i class="fa-solid fa-address-book"></i>Kontakt</a></li>
             </ul>
         </nav>
         <!-- Under denna kommentar lägger vi till 'erbjudande' och alla munkar -->
         <main>
             <button id="darkModeButton">Mörkt läge</button>
-            <!--sökfältet-->
-            <section class="container2">
-                <form class="searchbox">
-                    <input type="text" placeholder="Search" class="search" />
-                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                </form>
-            </section>
-
+           
             <!--Kampanj-->
             <div>
                 <h2 class="kampanj">Köp 15 munkar och få gratis frakt!</h2>
@@ -139,7 +131,11 @@
             <!-- Här kan vi skapa produktsammanställningen! -->
 
             <!-- Beställningsformulär -->
+            
             <form id="form">
+                <div class="msg">
+                  <p>Du har 15 minuter på dig att skicka din beställning</p>
+                </div>
                 <label for="firstName">Förnamn:</label><br />
                 <input type="text" id="firstName" name="firstName" required /><br />
 
