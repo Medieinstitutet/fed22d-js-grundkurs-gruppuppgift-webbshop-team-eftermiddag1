@@ -29,7 +29,7 @@ orderButton.addEventListener("click", summaryOpen);
 
 function summaryOpen() {
     summary.classList.toggle("open");
-    document.querySelector(".munkContainer").style.display = "none";
+    /*document.querySelector(".munkContainer").style.display = "none";*/
 }
 //Munkarray
 const initialDonuts = [
@@ -131,7 +131,8 @@ let discountFunction = () => 0;
 const donutContainer = document.querySelector(".munkContainer");
 const price = document.querySelector(".price");
 
-function renderDonuts() {
+
+function renderDonuts() {         
     donutContainer.innerHTML = "";
 
     for (let i = 0; i < donuts.length; i++) {
@@ -139,8 +140,8 @@ function renderDonuts() {
             <section class="sectionDonut">
             <h3>${donuts[i].name}</h3>
             <div class="donutContainer">
-              <img class="img1" src="${donuts[i].Image}" width="200" height="200"/>
-              <img class="img2" src="${donuts[i].Image2}" width="200" height="200"/>
+              <img class="img1" src="${donuts[i].Image}" width="150" height="200"/>
+              <img class="img2" src="${donuts[i].Image2}" width="150" height="200"/>
             </div>
             <div class="slideshowBtn">
               <button class="leftArrow"><span class="left"><i class="fa-solid fa-chevron-left"></i></span></button>
@@ -205,6 +206,14 @@ function renderDonuts() {
     document.querySelector(".shippingSum").innerHTML = shippingCost + " kr";
 
     discountSum.innerHTML = discount + " kr";
+
+    const rightArrow = document.querySelectorAll(".rightArrow");
+    const leftArrow = document.querySelectorAll(".leftArrow");
+
+    for (let i = 0; i < leftArrow.length; i++) {
+      leftArrow[i].addEventListener("click", swap);
+      rightArrow[i].addEventListener("click", swap);
+}
 }
 
 function printOrderedDonuts() {
@@ -233,8 +242,9 @@ function printOrderedDonuts() {
 
 function updateDonutAmount(e) {
     const donutClicked = e.currentTarget.dataset.id;
-    price.classList.toggle("open");
     donuts[donutClicked].amount += 1;
+    price.classList.toggle("open");
+    
 
     renderDonuts();
 }
@@ -251,19 +261,14 @@ function decreaseDonutAmount(e) {
 
 renderDonuts();
 //Slideshow
-const rightArrow = document.querySelectorAll(".rightArrow");
-const leftArrow = document.querySelectorAll(".leftArrow");
-
-for (let i = 0; i < leftArrow.length; i++) {
-    leftArrow[i].addEventListener("click", swap);
-    rightArrow[i].addEventListener("click", swap);
-}
-
 function swap(e) {
     const image1 =
         e.currentTarget.parentElement.parentElement.querySelector(".img1");
     const image2 =
         e.currentTarget.parentElement.parentElement.querySelector(".img2");
+    
+    donut1 = image1.getAttribute('src');
+    donut2 = image2.getAttribute('src');
 
     image1.setAttribute("src", donut2);
     image2.setAttribute("src", donut1);
@@ -282,6 +287,7 @@ const cardNumberField = document.getElementById("cardNumber");
 const monthField = document.getElementById("month");
 const yearField = document.getElementById("year");
 const cvcField = document.getElementById("cvc");
+
 
 invoiceButton.addEventListener("click", showInvoiceFields);
 cardButton.addEventListener("click", showCardFields);
@@ -320,6 +326,7 @@ function resetForm() {
 function enableSubmitButtonOnValidForm() {
     submitButton.disabled = !form.checkValidity();
 }
+
 
 // Sortera donuts
 const sortSelect = document.getElementById("sort");
@@ -432,3 +439,32 @@ function darkmodeFunction() {
         darkModeButton.innerHTML = "Mörkt läge";
     }
 }
+
+// Meddelande efter 15 min vid inaktivitet vid formuläret
+
+const msgDiv = document.querySelector('.msg');
+
+form.addEventListener('change', showAddedMessage)
+
+function showAddedMessage(){
+  setTimeout(clearForm, 5000);
+}
+
+function clearForm(){
+  msgDiv.classList.toggle("open");
+  document.getElementById('form').reset();
+  setTimeout(stoptimer, 5000);
+}
+
+function stoptimer(){
+  msgDiv.classList.toggle("open");
+}
+
+
+
+
+
+
+
+
+
