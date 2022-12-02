@@ -154,7 +154,6 @@ function renderDonuts() {
     `;
     }
     const isXmas = today.getMonth() === 11 && today.getDate() === 24;
-    console.log(today.getMonth());
     if (isXmas) {
         document.querySelectorAll(".donutBlockPrice").forEach((element) => {
             element.style.color = "red";
@@ -188,7 +187,12 @@ function renderDonuts() {
         shippingCostFunction = (value) =>
             Math.round((25 + 0.1 * value) * 100) / 100;
     }
-
+    const isMondayMorning = today.getDay() === 5 && today.getHours() < 12;
+    if (isMondayMorning) {
+        discountFunction = (sum) => sum * 0.1;
+        document.querySelector(".donutsOrdered").innerHTML += `
+        <span class="mondaySpecial">Måndagsrabatt: 10% på hela beställningen.</span>`;
+    }
     const discount = discountFunction(sum);
     const shippingCost = shippingCostFunction(sum - discount);
 
@@ -415,7 +419,6 @@ function validateDiscountCode() {
         renderDonuts();
     }
 }
-
 // dark mode
 const darkModeButton = document.getElementById("darkModeButton");
 
