@@ -45,18 +45,22 @@ h1 {
   color: #eb61a6;
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
+
 .kampanj {
   font-size: 2rem;
   font-family: 'Josefin sans', sans-serif;
   color: #34495e;
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
+
 .shoppingCart .fa-solid {
   color: white;
 }
+
 .donutIcon {
   display: none;
 }
+
 .container {
   position: absolute;
   display: flex;
@@ -93,12 +97,7 @@ h1 {
 .price {
   font-size: 1.5rem;
   position: relative;
-  display: none;
   color: white;
-}
-
-.price.open {
-  display: block;
 }
 
 .menuButton {
@@ -162,28 +161,8 @@ nav.open {
   color: white;
 }
 
-.container2 {
-  position: relative;
-  padding: 3px;
-  z-index: 0;
-}
-
-.search {
-  background: transparent;
-  outline: none;
-  border: 0;
-  font-size: 1rem;
-}
-
-.searchbox {
-  padding: 5px;
-  outline: 3px solid;
-  max-width: fit-content;
-  max-height: fit-content;
-  border-radius: 50px;
-}
-.searchbox:hover {
-  outline-color: #eb61a6;
+.closeMenu .fa-regular {
+  color: white;
 }
 
 // Munkblock
@@ -197,6 +176,7 @@ nav.open {
 
 .sectionDonut .img1 {
   position: relative;
+  left: 25%;
 }
 
 .donutContainer {
@@ -236,6 +216,7 @@ nav.open {
   background: transparent;
   border: 0;
 }
+
 button.plus, button.minus {
     border-radius: 10%;
     background-color: #eb61a6;
@@ -243,6 +224,7 @@ button.plus, button.minus {
     height: 2rem;
     width: 2rem;
 }
+
 p {
     margin:0.8rem 0.8rem;
 }
@@ -354,7 +336,30 @@ p {
 
 #form {
   text-align: center;
+  position: relative;
 }
+
+.msg {
+  opacity: 0;
+  height: 10vh;
+  width: 45vw;
+  border: 2px solid;
+  position: absolute;
+  left: 26%;
+  top: 30%;
+  background-color: grey;
+}
+
+.msg p {
+  color: red;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.msg.open {
+  opacity: 1;
+}
+
 .invoice {
   display: none;
 }
