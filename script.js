@@ -444,17 +444,23 @@ const msgDiv = document.querySelector('.msg');
 form.addEventListener('change', showAddedMessage)
 
 function showAddedMessage(){
-  setTimeout(clearForm, 5000);
+  setTimeout(clearForm, 1000 * 60 * 15);
 }
 
 function clearForm(){
-  msgDiv.classList.toggle("open");
+  alert('Du har 15 minuter på dig att fullfölja beställningen.');
   document.getElementById('form').reset();
-  setTimeout(stoptimer, 5000);
 }
 
-function stoptimer(){
-  msgDiv.classList.toggle("open");
+// Prispåslag mellan fre kl 15 till natten mot måndag kl 03
+
+for(let i = 0; i < donuts.length; i++){
+
+    let today = new Date();
+
+    if(((today.getDay() == 5 && today.getHours() >= 15) || (today.getDay() > 5 || today.getDay() <= 1)) && ((today.getDay() == 1 && today.getHours() <= 2) || (today.getDay() < 1 || today.getDay() >= 5))) {
+        donuts[i].price = Math.round(donuts[i].price * 1.15);
+    }
 }
 
 
