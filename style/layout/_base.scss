@@ -46,6 +46,14 @@ h1 {
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
+h3 {
+    font-size: 2rem;
+    font-family: "Josefin sans", sans-serif;
+    color: #eb16a6;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    margin: 3px;
+}
+
 .kampanj {
     font-size: 2rem;
     font-family: "Josefin sans", sans-serif;
@@ -252,7 +260,7 @@ p {
 }
 
 .summary.open {
-    right: 3%;
+    right: 0;
     z-index: 2;
 }
 
@@ -277,11 +285,13 @@ p {
     height: 2rem;
 }
 
-.closeSummary {
+.closeSummary,
+.closeForm {
     background: transparent;
     border: 0;
     position: relative;
     left: 20px;
+    cursor: pointer;
 }
 
 .cartText {
@@ -334,13 +344,35 @@ p {
     color: #34495e;
 }
 
-// Kort och faktura under denna rad är osynlig fram tills att betalningssätt har valts.
-
 #form {
     text-align: center;
     position: relative;
 }
 
+#formPage {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ebedef;
+    position: fixed;
+    top: 0px;
+    right: -110%;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    overflow: auto;
+
+    span {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+}
+#formPage.open {
+    right: 0;
+    z-index: 3;
+}
+
+// Kort och faktura under denna rad är osynlig fram tills att betalningssätt har valts.
 .invoice {
     display: none;
 }
@@ -388,6 +420,18 @@ p {
 /*Orderbekräftelsen*/
 .orderSummary {
     display: none;
+    z-index: 50;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background-color: lightgrey;
+    text-align: center;
+    padding: 50px;
+    box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px white,
+        0.3em 0.3em 1em rgb(0 0 0 / 30%);
+    min-width: calc(90% - 100px);
 }
 
 #darkModeButton {

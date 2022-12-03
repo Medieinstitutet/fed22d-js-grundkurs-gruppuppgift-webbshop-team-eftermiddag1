@@ -25,7 +25,7 @@ const orderButton = document.querySelector(".order");
 
 shoppingCart.addEventListener("click", summaryOpen);
 close.addEventListener("click", summaryOpen);
-orderButton.addEventListener("click", summaryOpen);
+orderButton.addEventListener("click", openFormPage);
 
 function summaryOpen() {
     summary.classList.toggle("open");
@@ -385,11 +385,12 @@ function filterPrice() {
 
 //Beställningsbekräftelse
 
-function initSummary() {
+function initSummary(event) {
+    event.preventDefault();
     const orderSummary = document.querySelector(".orderSummary");
     orderSummary.innerHTML = `<section>
       <h3> Tack för din beställning!</h3 >
-      <p>Din beställning har beräknad leveranstid på 1-3 dagar.</p>
+      <p>Din beställning har beräknad leveranstid: 30 minuter.</p>
       <div>
           <span>Produkter</span>
           <span>Antal</span>
@@ -408,7 +409,7 @@ function initSummary() {
         }
     }
     orderSummary.innerHTML += `<span>Summa: ${summa}</span>`;
-    orderSummary.style.display = "inline-block";
+    orderSummary.style.display = "block";
 }
 
 submitButton.addEventListener("click", initSummary);
@@ -472,4 +473,16 @@ for (let i = 0; i < donuts.length; i++) {
     ) {
         donuts[i].price = Math.round(donuts[i].price * 1.15);
     }
+}
+
+// Formulärsidan
+const formPage = document.getElementById("formPage");
+const formCloseIcon = document.querySelector(".closeForm");
+
+formCloseIcon.addEventListener("click", () =>
+    formPage.classList.remove("open"),
+);
+
+function openFormPage() {
+    formPage.classList.add("open");
 }
