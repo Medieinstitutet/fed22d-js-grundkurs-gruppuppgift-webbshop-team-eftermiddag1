@@ -149,7 +149,7 @@ function renderDonuts() {
             <div>${rating}</div>
             <div class="donutContainer">
               <img class="img1" src="${donut.Image}" width="150" height="200"/>
-              <img class="img2" src="${donut.Image2}" width="150" height="200"/>
+              <img class="img2 hidden" src="${donut.Image2}" width="150" height="200"/>
             </div>
             <div class="slideshowBtn">
               <button class="leftArrow"><span class="left"><i class="fa-solid fa-chevron-left"></i></span></button>
@@ -270,11 +270,8 @@ function swap(e) {
     const image2 =
         e.currentTarget.parentElement.parentElement.querySelector(".img2");
 
-    donut1 = image1.getAttribute("src");
-    donut2 = image2.getAttribute("src");
-
-    image1.setAttribute("src", donut2);
-    image2.setAttribute("src", donut1);
+    image1.classList.toggle("hidden");
+    image2.classList.toggle("hidden");
 }
 
 // Kort eller faktura samt beställningsformulär
