@@ -124,6 +124,7 @@ const initialDonuts = [
         Image2: "./images/candy_sprinkles.jpg",
     },
 ];
+
 //Rita ut munkar
 let donuts = initialDonuts;
 let discountFunction = () => 0;
@@ -131,38 +132,45 @@ let discountFunction = () => 0;
 const donutContainer = document.querySelector(".munkContainer");
 const price = document.querySelector(".price");
 
-
-function renderDonuts() {         
+function renderDonuts() {
     donutContainer.innerHTML = "";
 
     for (let i = 0; i < donuts.length; i++) {
+        const donut = donuts[i];
+        let rating = "";
+
+        for (let j = 0; j < donut.rating; j++) {
+            rating += '<span class="material-symbols-outlined">star</span>';
+        }
+
         donutContainer.innerHTML += `
             <section class="sectionDonut">
-            <h3>${donuts[i].name}</h3>
+            <h3>${donut.name}</h3>
+            <div>${rating}</div>
             <div class="donutContainer">
-              <img class="img1" src="${donuts[i].Image}" width="150" height="200"/>
-              <img class="img2" src="${donuts[i].Image2}" width="150" height="200"/>
+              <img class="img1" src="${donut.Image}" width="150" height="200"/>
+              <img class="img2" src="${donut.Image2}" width="150" height="200"/>
             </div>
             <div class="slideshowBtn">
               <button class="leftArrow"><span class="left"><i class="fa-solid fa-chevron-left"></i></span></button>
               <button class="rightArrow"><span class="right"><i class="fa-solid fa-chevron-right"></i></span></button>
             </div>
-            <p class="donutBlockPrice">${donuts[i].price}kr/st</p>
+            <p class="donutBlockPrice">${donut.price}kr/st</p>
             <button class="plus" data-id=${i}>+</button>
-            <input value="${donuts[i].amount}"/>
+            <input value="${donut.amount}"/>
             <button class="minus" data-id=${i}>-</button>
             </section>
     `;
     }
+
     const isXmas = today.getMonth() === 11 && today.getDate() === 24;
-    console.log(today.getMonth());
     if (isXmas) {
         document.querySelectorAll(".donutBlockPrice").forEach((element) => {
             element.style.color = "red";
         });
-        document.body.style.backgroundImage = "url('images/xmasBackground.jpg')";
+        document.body.style.backgroundImage =
+            "url('images/xmasBackground.jpg')";
     }
-    
 
     //plus och minusknappar
     document.querySelectorAll("button.plus").forEach((btn) => {
@@ -180,7 +188,7 @@ function renderDonuts() {
     const sumAmount = donuts.reduce((previousValue, donut) => {
         return donut.amount + previousValue;
     }, 0);
-//Ordersammanställning
+    //Ordersammanställning
     printOrderedDonuts();
 
     if (sumAmount > 15) {
@@ -207,9 +215,9 @@ function renderDonuts() {
     const leftArrow = document.querySelectorAll(".leftArrow");
 
     for (let i = 0; i < leftArrow.length; i++) {
-      leftArrow[i].addEventListener("click", swap);
-      rightArrow[i].addEventListener("click", swap);
-}
+        leftArrow[i].addEventListener("click", swap);
+        rightArrow[i].addEventListener("click", swap);
+    }
 }
 
 function printOrderedDonuts() {
@@ -240,7 +248,6 @@ function updateDonutAmount(e) {
     const donutClicked = e.currentTarget.dataset.id;
     donuts[donutClicked].amount += 1;
     price.classList.toggle("open");
-    
 
     renderDonuts();
 }
@@ -262,9 +269,9 @@ function swap(e) {
         e.currentTarget.parentElement.parentElement.querySelector(".img1");
     const image2 =
         e.currentTarget.parentElement.parentElement.querySelector(".img2");
-    
-    donut1 = image1.getAttribute('src');
-    donut2 = image2.getAttribute('src');
+
+    donut1 = image1.getAttribute("src");
+    donut2 = image2.getAttribute("src");
 
     image1.setAttribute("src", donut2);
     image2.setAttribute("src", donut1);
@@ -283,7 +290,6 @@ const cardNumberField = document.getElementById("cardNumber");
 const monthField = document.getElementById("month");
 const yearField = document.getElementById("year");
 const cvcField = document.getElementById("cvc");
-
 
 invoiceButton.addEventListener("click", showInvoiceFields);
 cardButton.addEventListener("click", showCardFields);
@@ -322,7 +328,6 @@ function resetForm() {
 function enableSubmitButtonOnValidForm() {
     submitButton.disabled = !form.checkValidity();
 }
-
 
 // Sortera donuts
 const sortSelect = document.getElementById("sort");
@@ -439,35 +444,32 @@ function darkmodeFunction() {
 
 // Meddelande efter 15 min vid inaktivitet vid formuläret
 
-const msgDiv = document.querySelector('.msg');
+const msgDiv = document.querySelector(".msg");
 
-form.addEventListener('change', showAddedMessage)
+form.addEventListener("change", showAddedMessage);
 
-function showAddedMessage(){
-  setTimeout(clearForm, 1000 * 60 * 15);
+function showAddedMessage() {
+    setTimeout(clearForm, 1000 * 60 * 15);
 }
 
-function clearForm(){
-  alert('Du har 15 minuter på dig att fullfölja beställningen.');
-  document.getElementById('form').reset();
+function clearForm() {
+    alert("Du har 15 minuter på dig att fullfölja beställningen.");
+    document.getElementById("form").reset();
 }
 
 // Prispåslag mellan fre kl 15 till natten mot måndag kl 03
 
-for(let i = 0; i < donuts.length; i++){
-
+for (let i = 0; i < donuts.length; i++) {
     let today = new Date();
 
-    if(((today.getDay() == 5 && today.getHours() >= 15) || (today.getDay() > 5 || today.getDay() <= 1)) && ((today.getDay() == 1 && today.getHours() <= 2) || (today.getDay() < 1 || today.getDay() >= 5))) {
+    if (
+        ((today.getDay() == 5 && today.getHours() >= 15) ||
+            today.getDay() > 5 ||
+            today.getDay() <= 1) &&
+        ((today.getDay() == 1 && today.getHours() <= 2) ||
+            today.getDay() < 1 ||
+            today.getDay() >= 5)
+    ) {
         donuts[i].price = Math.round(donuts[i].price * 1.15);
     }
 }
-
-
-
-
-
-
-
-
-
