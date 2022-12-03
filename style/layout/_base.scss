@@ -339,27 +339,6 @@ p {
   position: relative;
 }
 
-.msg {
-  opacity: 0;
-  height: 10vh;
-  width: 45vw;
-  border: 2px solid;
-  position: absolute;
-  left: 26%;
-  top: 30%;
-  background-color: grey;
-}
-
-.msg p {
-  color: red;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.msg.open {
-  opacity: 1;
-}
-
 .invoice {
   display: none;
 }
