@@ -388,27 +388,42 @@ function filterPrice() {
 function initSummary(event) {
     event.preventDefault();
     const orderSummary = document.querySelector(".orderSummary");
+
+    const rows = donuts
+        .filter(({ amount }) => amount > 0)
+        .map(
+            ({ name, amount, price }) => `<tr>
+                <td>${name}</td>
+                <td>${amount} st</td>
+                <td>${price * amount} kr</td>
+            </tr>`,
+        )
+        .join("");
+
+    const sum = donuts.reduce(
+        (sum, { price, amount }) => sum + price * amount,
+        0,
+    );
+
     orderSummary.innerHTML = `<section>
-      <h3> Tack för din beställning!</h3 >
-      <p>Din beställning har beräknad leveranstid: 30 minuter.</p>
-      <div>
-          <span>Produkter</span>
-          <span>Antal</span>
-          <span>Pris</span>
-      </div>
-  </section>`;
-    let summa = 0;
-    for (let i = 0; i < donuts.length; i++) {
-        if (donuts[i].amount > 0) {
-            orderSummary.innerHTML += `<div>
-          <span>${donuts[i].name}</span>
-          <span>${donuts[i].amount}</span>
-          <span>${donuts[i].price * donuts[i].amount}</span>
-      </div>`;
-            summa += donuts[i].price * donuts[i].amount;
-        }
-    }
-    orderSummary.innerHTML += `<span>Summa: ${summa}</span>`;
+        <h3> Tack för din beställning!</h3>
+        <p>Din beställning har beräknad leveranstid:</p>
+        <p>30 minuter.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produkter</th>
+                    <th>Antal</th>
+                    <th>Pris</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${rows}
+            </tbody>
+        </table>
+        <p>Summa: ${sum} kr</p>
+    </section>`;
+
     orderSummary.style.display = "block";
 }
 

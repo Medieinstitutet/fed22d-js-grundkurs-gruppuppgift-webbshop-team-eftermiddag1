@@ -434,6 +434,19 @@ p {
     min-width: calc(90% - 100px);
 }
 
+table {
+    margin: 0 auto;
+}
+
+tr {
+    text-align: left;
+}
+
+td,
+th {
+    padding-right: 20px;
+}
+
 #darkModeButton {
     margin: 10px;
 }
