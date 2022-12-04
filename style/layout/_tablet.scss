@@ -1,5 +1,9 @@
 // Här lägger vi till kod för att anpassa layouten för surfplattor.
 
+h1 {
+    font-size: 2.5rem;
+}
+
 .munkContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -22,4 +26,8 @@
 
 .donutIcon {
     display: block;
+}
+
+.campaign {
+    text-align: center;
 }
