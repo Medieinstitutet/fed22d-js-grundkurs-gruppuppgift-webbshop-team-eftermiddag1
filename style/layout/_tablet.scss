@@ -1,0 +1,37 @@
+// Här lägger vi till kod för att anpassa layouten för surfplattor.
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.header-container {
+  width: unset;
+}
+
+.munkContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: minmax(200px, auto);
+  max-width: 1000px;
+  gap: 1em;
+  list-style: none;
+  margin: 10px 10px 0px;
+  padding: 0px;
+}
+
+.summary.open {
+  right: 0%;
+}
+
+.sectionDonut {
+  margin-right: 20px;
+  border: 3px solid #34495e;
+}
+
+.donutIcon {
+  display: block;
+}
+
+.campaign {
+  text-align: center;
+}
