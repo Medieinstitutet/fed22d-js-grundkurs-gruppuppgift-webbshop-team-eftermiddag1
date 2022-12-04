@@ -5,7 +5,8 @@ let tenDonutsDiscountSum;
 const isLucia = today.getMonth() === 11 && today.getDate() === 13;
 let shippingCostFunction = (value) =>
     Math.round((25 + 0.1 * value) * 100) / 100;
-
+let evenWeekDiscount;
+let finalSum;
 // Menyknapp
 const menuButton = document.querySelector(".menuButton");
 const menuClose = document.querySelector(".closeMenu");
@@ -134,7 +135,7 @@ const price = document.querySelector(".price");
 
 function renderDonuts() {
     donutContainer.innerHTML = "";
-
+    finalSum = 0;
     for (let i = 0; i < donuts.length; i++) {
         const donut = donuts[i];
         let rating = "";
@@ -190,13 +191,7 @@ function renderDonuts() {
             tenDonutsDiscountSum += donut.amount * donut.price * 0.1;
         }
     }
-    //tenDonutsDiscountSum = donuts.reduce((previousValue, donut) => {
-    //    if (donut.amount >= 10) {
-    //        return donut.amount * donut.price * 0.1 + previousValue;
-    //    }
-    //}, 0);
     sum -= tenDonutsDiscountSum;
-
     const sumAmount = donuts.reduce((previousValue, donut) => {
         return donut.amount + previousValue;
     }, 0);
@@ -216,10 +211,15 @@ function renderDonuts() {
         <span class="mondaySpecial">Måndagsrabatt: 10% på hela beställningen.</span>`;
     }
     const discount = discountFunction(sum);
+    evenWeekDiscount = 0;
+    if (isEvenWeek() && today.getDay() === 2 && sum > 25) {
+        evenWeekDiscount = 25;
+    }
+    sum -= evenWeekDiscount;
     const shippingCost = shippingCostFunction(
-        sum - discount - tenDonutsDiscountSum
+        sum - discount - tenDonutsDiscountSum - evenWeekDiscount
     );
-
+    finalSum = sum + shippingCost - discount - tenDonutsDiscountSum;
     document.querySelector(".price").innerHTML = sum + " kr";
     document.querySelector(".priceSummary").innerHTML = sum + " kr";
     document.querySelector(".totalSummary").innerHTML =
@@ -228,7 +228,8 @@ function renderDonuts() {
 
     document.querySelector(".shippingSum").innerHTML = shippingCost + " kr";
 
-    discountSum.innerHTML = discount + tenDonutsDiscountSum + " kr";
+    discountSum.innerHTML =
+        discount + tenDonutsDiscountSum + evenWeekDiscount + " kr";
 
     const rightArrow = document.querySelectorAll(".rightArrow");
     const leftArrow = document.querySelectorAll(".leftArrow");
@@ -237,6 +238,14 @@ function renderDonuts() {
         leftArrow[i].addEventListener("click", swap);
         rightArrow[i].addEventListener("click", swap);
     }
+}
+function isEvenWeek() {
+    const currentDate = new Date();
+    const startDate = new Date(currentDate.getFullYear(), 0, 3);
+    const days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000));
+
+    const weekNumber = Math.ceil((days + currentDate.getDay() + 1) / 7);
+    return weekNumber % 2 === 0 ? true : false;
 }
 
 function printOrderedDonuts() {
@@ -415,12 +424,6 @@ function initSummary(event) {
             </tr>`
         )
         .join("");
-
-    const sum = donuts.reduce(
-        (sum, { price, amount }) => sum + price * amount,
-        0
-    );
-
     orderSummary.innerHTML = `<section>
         <h3> Tack för din beställning!</h3>
         <p>Din beställning har beräknad leveranstid:</p>
@@ -437,7 +440,7 @@ function initSummary(event) {
                 ${rows}
             </tbody>
         </table>
-        <p>Summa: ${sum} kr</p>
+        <p>Summa: ${finalSum} kr</p>
     </section>`;
 
     orderSummary.style.display = "block";
@@ -514,5 +517,8 @@ formCloseIcon.addEventListener("click", () =>
 );
 
 function openFormPage() {
+    if (finalSum > 800) {
+        document.querySelector("#invoice").disabled = true;
+    }
     formPage.classList.add("open");
 }
