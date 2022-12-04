@@ -1,11 +1,13 @@
 // Globalt
 const today = new Date();
+let tenDonutsDiscountSum;
 const isLucia = today.getMonth() === 11 && today.getDate() === 13;
 const isXmas = today.getMonth() === 11 && today.getDate() === 24;
 
 let shippingCostFunction = (value) =>
     Math.round((25 + 0.1 * value) * 100) / 100;
-
+let evenWeekDiscount;
+let finalSum;
 // Menyknapp
 const menuButton = document.querySelector(".menuButton");
 const menuClose = document.querySelector(".closeMenu");
@@ -30,7 +32,6 @@ orderButton.addEventListener("click", openFormPage);
 
 function summaryOpen() {
     summary.classList.toggle("open");
-    /*document.querySelector(".munkContainer").style.display = "none";*/
 }
 //Munkarray
 
@@ -146,7 +147,7 @@ const donutsOrdered = document.querySelector(".donutsOrdered");
 
 function renderDonuts() {
     donutContainer.innerHTML = "";
-
+    finalSum = 0;
     for (let i = 0; i < donuts.length; i++) {
         const donut = donuts[i];
         let rating = "";
@@ -208,10 +209,16 @@ function renderDonuts() {
         });
     });
 
-    const sum = donuts.reduce((previousValue, donut) => {
+    let sum = donuts.reduce((previousValue, donut) => {
         return donut.amount * donut.price + previousValue;
     }, 0);
-
+    tenDonutsDiscountSum = 0;
+    for (const donut of donuts) {
+        if (donut.amount >= 10) {
+            tenDonutsDiscountSum += donut.amount * donut.price * 0.1;
+        }
+    }
+    sum -= tenDonutsDiscountSum;
     const sumAmount = donuts.reduce((previousValue, donut) => {
         return donut.amount + previousValue;
     }, 0);
@@ -229,16 +236,31 @@ function renderDonuts() {
         shippingCostFunction = (value) =>
             Math.round((25 + 0.1 * value) * 100) / 100;
     }
-
+    const isMondayMorning = today.getDay() === 1 && today.getHours() < 10;
+    if (isMondayMorning) {
+        discountFunction = (sum) => sum * 0.1;
+        document.querySelector(".donutsOrdered").innerHTML += `
+        <span class="mondaySpecial">Måndagsrabatt: 10% på hela beställningen.</span>`;
+    }
     const discount = discountFunction(sum);
-    const shippingCost = shippingCostFunction(sum - discount);
+    evenWeekDiscount = 0;
+    if (isEvenWeek() && today.getDay() === 2 && sum > 25) {
+        evenWeekDiscount = 25;
+    }
+    sum -= evenWeekDiscount;
+    const shippingCost = shippingCostFunction(
+        sum - discount - tenDonutsDiscountSum - evenWeekDiscount,
+    );
+    finalSum = sum + shippingCost - discount - tenDonutsDiscountSum;
 
     priceLabel.innerHTML = sum > 0 ? sum + " kr" : "";
     priceSummaryLabel.innerHTML = sum + " kr";
-    totalSummaryLabel.innerHTML = sum + shippingCost - discount + " kr";
+    totalSummaryLabel.innerHTML =
+        sum + shippingCost - discount - tenDonutsDiscountSum + " kr";
     amountBadge.innerHTML = sumAmount;
     shippingSummaryLabel.innerHTML = shippingCost + " kr";
-    discountSummaryLabel.innerHTML = discount + " kr";
+    discountSummaryLabel.innerHTML =
+        discount + tenDonutsDiscountSum + evenWeekDiscount + " kr";
 
     const leftArrows = document.querySelectorAll(".leftArrow");
     const rightArrows = document.querySelectorAll(".rightArrow");
@@ -247,6 +269,14 @@ function renderDonuts() {
         leftArrows[i].addEventListener("click", swap);
         rightArrows[i].addEventListener("click", swap);
     }
+}
+function isEvenWeek() {
+    const currentDate = new Date();
+    const startDate = new Date(currentDate.getFullYear(), 0, 3);
+    const days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000));
+
+    const weekNumber = Math.ceil((days + currentDate.getDay() + 1) / 7);
+    return weekNumber % 2 === 0 ? true : false;
 }
 
 function printOrderedDonuts() {
@@ -436,12 +466,6 @@ function initSummary(event) {
             </tr>`,
         )
         .join("");
-
-    const sum = donuts.reduce(
-        (sum, { price, amount }) => sum + price * amount,
-        0,
-    );
-
     orderSummary.innerHTML = `<section>
         <h3> Tack för din beställning!</h3>
         <p>Din beställning har beräknad leveranstid:</p>
@@ -458,7 +482,7 @@ function initSummary(event) {
                 ${rows}
             </tbody>
         </table>
-        <p>Summa: ${sum} kr</p>
+        <p>Summa: ${finalSum} kr</p>
     </section>`;
 
     time();
@@ -500,7 +524,6 @@ function validateDiscountCode() {
         renderDonuts();
     }
 }
-
 // dark mode
 const darkModeButton = document.getElementById("darkModeButton");
 
@@ -556,5 +579,8 @@ formCloseIcon.addEventListener("click", () =>
 );
 
 function openFormPage() {
+    if (finalSum > 800) {
+        document.querySelector("#invoice").disabled = true;
+    }
     formPage.classList.add("open");
 }
