@@ -131,8 +131,7 @@ let discountFunction = () => 0;
 const donutContainer = document.querySelector(".munkContainer");
 const price = document.querySelector(".price");
 
-
-function renderDonuts() {         
+function renderDonuts() {
     donutContainer.innerHTML = "";
 
     for (let i = 0; i < donuts.length; i++) {
@@ -159,9 +158,9 @@ function renderDonuts() {
         document.querySelectorAll(".donutBlockPrice").forEach((element) => {
             element.style.color = "red";
         });
-        document.body.style.backgroundImage = "url('images/xmasBackground.jpg')";
+        document.body.style.backgroundImage =
+            "url('images/xmasBackground.jpg')";
     }
-    
 
     //plus och minusknappar
     document.querySelectorAll("button.plus").forEach((btn) => {
@@ -173,13 +172,18 @@ function renderDonuts() {
     });
 
     const sum = donuts.reduce((previousValue, donut) => {
-        return donut.amount * donut.price + previousValue;
+        if (donut.amount >= 10) {
+            console.log("hej");
+            return donut.amount * donut.price * 0.9 + previousValue;
+        } else {
+            return donut.amount * donut.price + previousValue;
+        }
     }, 0);
 
     const sumAmount = donuts.reduce((previousValue, donut) => {
         return donut.amount + previousValue;
     }, 0);
-//Ordersammanställning
+    //Ordersammanställning
     printOrderedDonuts();
 
     if (sumAmount > 15) {
@@ -188,7 +192,7 @@ function renderDonuts() {
         shippingCostFunction = (value) =>
             Math.round((25 + 0.1 * value) * 100) / 100;
     }
-    const isMondayMorning = today.getDay() === 5 && today.getHours() < 12;
+    const isMondayMorning = today.getDay() === 1 && today.getHours() < 10;
     if (isMondayMorning) {
         discountFunction = (sum) => sum * 0.1;
         document.querySelector(".donutsOrdered").innerHTML += `
@@ -211,9 +215,9 @@ function renderDonuts() {
     const leftArrow = document.querySelectorAll(".leftArrow");
 
     for (let i = 0; i < leftArrow.length; i++) {
-      leftArrow[i].addEventListener("click", swap);
-      rightArrow[i].addEventListener("click", swap);
-}
+        leftArrow[i].addEventListener("click", swap);
+        rightArrow[i].addEventListener("click", swap);
+    }
 }
 
 function printOrderedDonuts() {
@@ -244,7 +248,6 @@ function updateDonutAmount(e) {
     const donutClicked = e.currentTarget.dataset.id;
     donuts[donutClicked].amount += 1;
     price.classList.toggle("open");
-    
 
     renderDonuts();
 }
@@ -266,9 +269,9 @@ function swap(e) {
         e.currentTarget.parentElement.parentElement.querySelector(".img1");
     const image2 =
         e.currentTarget.parentElement.parentElement.querySelector(".img2");
-    
-    donut1 = image1.getAttribute('src');
-    donut2 = image2.getAttribute('src');
+
+    donut1 = image1.getAttribute("src");
+    donut2 = image2.getAttribute("src");
 
     image1.setAttribute("src", donut2);
     image2.setAttribute("src", donut1);
@@ -287,7 +290,6 @@ const cardNumberField = document.getElementById("cardNumber");
 const monthField = document.getElementById("month");
 const yearField = document.getElementById("year");
 const cvcField = document.getElementById("cvc");
-
 
 invoiceButton.addEventListener("click", showInvoiceFields);
 cardButton.addEventListener("click", showCardFields);
@@ -326,7 +328,6 @@ function resetForm() {
 function enableSubmitButtonOnValidForm() {
     submitButton.disabled = !form.checkValidity();
 }
-
 
 // Sortera donuts
 const sortSelect = document.getElementById("sort");
@@ -442,29 +443,20 @@ function darkmodeFunction() {
 
 // Meddelande efter 15 min vid inaktivitet vid formuläret
 
-const msgDiv = document.querySelector('.msg');
+const msgDiv = document.querySelector(".msg");
 
-form.addEventListener('change', showAddedMessage)
+form.addEventListener("change", showAddedMessage);
 
-function showAddedMessage(){
-  setTimeout(clearForm, 5000);
+function showAddedMessage() {
+    setTimeout(clearForm, 5000);
 }
 
-function clearForm(){
-  msgDiv.classList.toggle("open");
-  document.getElementById('form').reset();
-  setTimeout(stoptimer, 5000);
+function clearForm() {
+    msgDiv.classList.toggle("open");
+    document.getElementById("form").reset();
+    setTimeout(stoptimer, 5000);
 }
 
-function stoptimer(){
-  msgDiv.classList.toggle("open");
+function stoptimer() {
+    msgDiv.classList.toggle("open");
 }
-
-
-
-
-
-
-
-
-

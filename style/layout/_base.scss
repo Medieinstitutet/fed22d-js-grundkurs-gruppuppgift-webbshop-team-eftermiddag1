@@ -243,13 +243,13 @@ p {
 
 .summary {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #ebedef;
   position: fixed;
   top: 0px;
   right: -110%;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .summary.open {
