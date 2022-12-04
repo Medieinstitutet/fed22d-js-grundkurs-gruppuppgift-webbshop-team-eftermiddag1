@@ -1,62 +1,22 @@
 // Här lägger vi till koden för att anpassa layouten för desktop.
-h1 {
-  font-size: 2.5rem;
-}
-
 header {
-  justify-content: center;
+    justify-content: center;
 }
 
 .munkContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
 }
 
 .donutIcon {
-  display: block;
-}
-
-.slideshowBtn {
-  position: relative;
-  color: black;
+    display: block;
 }
 
 .sectionDonut {
-  text-align: center;
-  margin-bottom: 30px;
-  background-color: #ebedef;
-  padding: 1rem;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  border: 3px solid #34495e;
-}
-
-h3 {
-  font-size: 2rem;
-  font-family: 'Josefin sans', sans-serif;
-  color: #eb16a6;
-  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-  margin: 3px;
-}
-
-.sectionDonut .img1 {
-  position: relative;
-  left: 25%;
-}
-
-.msg {
-  height: 15vh;
-  width: 30vw;
-  border: 2px solid;
-  position: absolute;
-  left: 35%;
-  top: 30%;
-  background-color: grey;
-}
-
-.msg p {
-  color: red;
-  font-weight: bold;
-  font-size: 1.5rem;
+    background-color: #ebedef;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    border: 3px solid #34495e;
 }

@@ -25,7 +25,7 @@ const orderButton = document.querySelector(".order");
 
 shoppingCart.addEventListener("click", summaryOpen);
 close.addEventListener("click", summaryOpen);
-orderButton.addEventListener("click", summaryOpen);
+orderButton.addEventListener("click", openFormPage);
 
 function summaryOpen() {
     summary.classList.toggle("open");
@@ -124,6 +124,7 @@ const initialDonuts = [
         Image2: "./images/candy_sprinkles.jpg",
     },
 ];
+
 //Rita ut munkar
 let donuts = initialDonuts;
 let discountFunction = () => 0;
@@ -135,24 +136,33 @@ function renderDonuts() {
     donutContainer.innerHTML = "";
 
     for (let i = 0; i < donuts.length; i++) {
+        const donut = donuts[i];
+        let rating = "";
+
+        for (let j = 0; j < donut.rating; j++) {
+            rating += '<span class="material-symbols-outlined">star</span>';
+        }
+
         donutContainer.innerHTML += `
             <section class="sectionDonut">
-            <h3>${donuts[i].name}</h3>
+            <h3>${donut.name}</h3>
+            <div>${rating}</div>
             <div class="donutContainer">
-              <img class="img1" src="${donuts[i].Image}" width="150" height="200"/>
-              <img class="img2" src="${donuts[i].Image2}" width="150" height="200"/>
+              <img class="img1" src="${donut.Image}" width="150" height="200"/>
+              <img class="img2 hidden" src="${donut.Image2}" width="150" height="200"/>
             </div>
             <div class="slideshowBtn">
               <button class="leftArrow"><span class="left"><i class="fa-solid fa-chevron-left"></i></span></button>
               <button class="rightArrow"><span class="right"><i class="fa-solid fa-chevron-right"></i></span></button>
             </div>
-            <p class="donutBlockPrice">${donuts[i].price}kr/st</p>
+            <p class="donutBlockPrice">${donut.price}kr/st</p>
             <button class="plus" data-id=${i}>+</button>
-            <input value="${donuts[i].amount}"/>
+            <input value="${donut.amount}"/>
             <button class="minus" data-id=${i}>-</button>
             </section>
     `;
     }
+
     const isXmas = today.getMonth() === 11 && today.getDate() === 24;
     if (isXmas) {
         document.querySelectorAll(".donutBlockPrice").forEach((element) => {
@@ -270,11 +280,8 @@ function swap(e) {
     const image2 =
         e.currentTarget.parentElement.parentElement.querySelector(".img2");
 
-    donut1 = image1.getAttribute("src");
-    donut2 = image2.getAttribute("src");
-
-    image1.setAttribute("src", donut2);
-    image2.setAttribute("src", donut1);
+    image1.classList.toggle("hidden");
+    image2.classList.toggle("hidden");
 }
 
 // Kort eller faktura samt beställningsformulär
@@ -385,30 +392,46 @@ function filterPrice() {
 
 //Beställningsbekräftelse
 
-function initSummary() {
+function initSummary(event) {
+    event.preventDefault();
     const orderSummary = document.querySelector(".orderSummary");
+
+    const rows = donuts
+        .filter(({ amount }) => amount > 0)
+        .map(
+            ({ name, amount, price }) => `<tr>
+                <td>${name}</td>
+                <td>${amount} st</td>
+                <td>${price * amount} kr</td>
+            </tr>`,
+        )
+        .join("");
+
+    const sum = donuts.reduce(
+        (sum, { price, amount }) => sum + price * amount,
+        0,
+    );
+
     orderSummary.innerHTML = `<section>
-      <h3> Tack för din beställning!</h3 >
-      <p>Din beställning har beräknad leveranstid på 1-3 dagar.</p>
-      <div>
-          <span>Produkter</span>
-          <span>Antal</span>
-          <span>Pris</span>
-      </div>
-  </section>`;
-    let summa = 0;
-    for (let i = 0; i < donuts.length; i++) {
-        if (donuts[i].amount > 0) {
-            orderSummary.innerHTML += `<div>
-          <span>${donuts[i].name}</span>
-          <span>${donuts[i].amount}</span>
-          <span>${donuts[i].price * donuts[i].amount}</span>
-      </div>`;
-            summa += donuts[i].price * donuts[i].amount;
-        }
-    }
-    orderSummary.innerHTML += `<span>Summa: ${summa}</span>`;
-    orderSummary.style.display = "inline-block";
+        <h3> Tack för din beställning!</h3>
+        <p>Din beställning har beräknad leveranstid:</p>
+        <p>30 minuter.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produkter</th>
+                    <th>Antal</th>
+                    <th>Pris</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${rows}
+            </tbody>
+        </table>
+        <p>Summa: ${sum} kr</p>
+    </section>`;
+
+    orderSummary.style.display = "block";
 }
 
 submitButton.addEventListener("click", initSummary);
@@ -448,15 +471,39 @@ const msgDiv = document.querySelector(".msg");
 form.addEventListener("change", showAddedMessage);
 
 function showAddedMessage() {
-    setTimeout(clearForm, 5000);
+    setTimeout(clearForm, 1000 * 60 * 15);
 }
 
 function clearForm() {
-    msgDiv.classList.toggle("open");
+    alert("Du har 15 minuter på dig att fullfölja beställningen.");
     document.getElementById("form").reset();
-    setTimeout(stoptimer, 5000);
 }
 
-function stoptimer() {
-    msgDiv.classList.toggle("open");
+// Prispåslag mellan fre kl 15 till natten mot måndag kl 03
+
+for (let i = 0; i < donuts.length; i++) {
+    let today = new Date();
+
+    if (
+        ((today.getDay() == 5 && today.getHours() >= 15) ||
+            today.getDay() > 5 ||
+            today.getDay() <= 1) &&
+        ((today.getDay() == 1 && today.getHours() <= 2) ||
+            today.getDay() < 1 ||
+            today.getDay() >= 5)
+    ) {
+        donuts[i].price = Math.round(donuts[i].price * 1.15);
+    }
+}
+
+// Formulärsidan
+const formPage = document.getElementById("formPage");
+const formCloseIcon = document.querySelector(".closeForm");
+
+formCloseIcon.addEventListener("click", () =>
+    formPage.classList.remove("open"),
+);
+
+function openFormPage() {
+    formPage.classList.add("open");
 }
