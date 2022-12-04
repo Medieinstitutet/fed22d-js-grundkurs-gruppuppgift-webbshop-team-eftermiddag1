@@ -163,17 +163,17 @@ function renderDonuts() {
         </div>
         <div>
             <div class="donutContainer">
-                <img class="img1" src="${donut.image}" width="150" height="200"/>
-                <img class="img2 hidden" src="${donut.image2}" width="150" height="200"/>
+                <img class="img1" src="${donut.image}" width="150" height="200" alt="donut"/>
+                <img class="img2 hidden" src="${donut.image2}" width="150" height="200"/ alt=""donut ingredient>
             </div>
             <div class="slideshowBtn">
-                <button class="leftArrow"><span class="left"><i class="fa-solid fa-chevron-left"></i></span></button>
-                <button class="rightArrow"><span class="right"><i class="fa-solid fa-chevron-right"></i></span></button>
+                <button class="leftArrow" aria-label="left arrow"><span class="left"><i class="fa-solid fa-chevron-left"></i></span></button>
+                <button class="rightArrow" aria-label="right arrow"><span class="right"><i class="fa-solid fa-chevron-right"></i></span></button>
             </div>
             <p class="donutBlockPrice">${donut.price} kr/st</p>
             <div class="donutAmountContainer">
                 <button class="minus" data-id=${i}>—</button>
-                <input class="donutAmountField" type="number" value="${donut.amount}"/>
+                <input class="donutAmountField" type="number" value="${donut.amount}" aria-label="donut amount"/>
                 <button class="plus" data-id=${i}>+</button>
             </div>
         </div>
