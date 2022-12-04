@@ -185,11 +185,16 @@ function renderDonuts() {
         return donut.amount * donut.price + previousValue;
     }, 0);
     tenDonutsDiscountSum = 0;
-    tenDonutsDiscountSum = donuts.reduce((previousValue, donut) => {
+    for (const donut of donuts) {
         if (donut.amount >= 10) {
-            return donut.amount * donut.price * 0.1 + previousValue;
+            tenDonutsDiscountSum += donut.amount * donut.price * 0.1;
         }
-    }, 0);
+    }
+    //tenDonutsDiscountSum = donuts.reduce((previousValue, donut) => {
+    //    if (donut.amount >= 10) {
+    //        return donut.amount * donut.price * 0.1 + previousValue;
+    //    }
+    //}, 0);
     sum -= tenDonutsDiscountSum;
 
     const sumAmount = donuts.reduce((previousValue, donut) => {
@@ -211,17 +216,19 @@ function renderDonuts() {
         <span class="mondaySpecial">Måndagsrabatt: 10% på hela beställningen.</span>`;
     }
     const discount = discountFunction(sum);
-    const shippingCost = shippingCostFunction(sum - discount);
+    const shippingCost = shippingCostFunction(
+        sum - discount - tenDonutsDiscountSum
+    );
 
     document.querySelector(".price").innerHTML = sum + " kr";
     document.querySelector(".priceSummary").innerHTML = sum + " kr";
     document.querySelector(".totalSummary").innerHTML =
-        sum + shippingCost - discount + " kr";
+        sum + shippingCost - discount - tenDonutsDiscountSum + " kr";
     document.querySelector(".amount").innerHTML = sumAmount;
 
     document.querySelector(".shippingSum").innerHTML = shippingCost + " kr";
 
-    discountSum.innerHTML = discount + " kr";
+    discountSum.innerHTML = discount + tenDonutsDiscountSum + " kr";
 
     const rightArrow = document.querySelectorAll(".rightArrow");
     const leftArrow = document.querySelectorAll(".leftArrow");
