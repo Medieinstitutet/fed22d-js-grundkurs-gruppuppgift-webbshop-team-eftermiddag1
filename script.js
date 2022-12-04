@@ -529,12 +529,22 @@ const darkModeButton = document.getElementById("darkModeButton");
 
 darkModeButton.addEventListener("click", darkmodeFunction);
 
+const isDarkMode = localStorage.getItem("darkMode") === "true";
+
+if (isDarkMode) {
+    document.body.classList.add("dark-mode");
+    darkModeButton.innerHTML = "Ljust läge";
+}
+
 function darkmodeFunction() {
     document.body.classList.toggle("dark-mode");
     if (darkModeButton.innerHTML === "Mörkt läge") {
         darkModeButton.innerHTML = "Ljust läge";
+        localStorage.setItem("darkMode", "true");
     } else {
         darkModeButton.innerHTML = "Mörkt läge";
+
+        localStorage.removeItem("darkMode");
     }
 }
 
