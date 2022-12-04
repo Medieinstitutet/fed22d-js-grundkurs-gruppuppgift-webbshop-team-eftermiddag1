@@ -1,66 +1,66 @@
 // Här stylar vi mörkt läge
 .dark-mode {
-    background-color: #16213e;
+  background-color: #16213e;
+  color: white;
+
+  header {
+    background-color: #0f3460;
+  }
+
+  #darkModeButton {
+    background-color: #533483;
     color: white;
+  }
 
-    header {
-        background-color: #0f3460;
-    }
+  h1,
+  h2,
+  h3,
+  #sort,
+  .filter {
+    color: #e94560;
+  }
 
-    #darkModeButton {
-        background-color: #533483;
-        color: white;
-    }
+  p {
+    color: white;
+  }
 
-    h1,
-    h2,
-    h3,
-    #sort,
-    .filter {
-        color: #e94560;
-    }
+  section {
+    background-color: #16213e;
+  }
 
-    p {
-        color: white;
-    }
+  i {
+    color: white;
+  }
 
-    section {
-        background-color: #16213e;
-    }
+  .sectionDonut {
+    border: 3px solid #533483;
+  }
 
-    i {
-        color: white;
-    }
+  .order {
+    background-color: #533483;
+    color: white;
+  }
 
-    .sectionDonut {
-        border: 3px solid #533483;
-    }
+  span {
+    color: white;
+  }
+  nav {
+    background-color: #0f3460;
+  }
+  #formPage {
+    background-color: #0f3460;
+  }
 
-    .order {
-        background-color: #533483;
-        color: white;
-    }
+  .amount {
+    background-color: #e94560;
+  }
 
-    span {
-        color: white;
-    }
-    nav {
-        background-color: #0f3460;
-    }
-    #formPage {
-        background-color: #0f3460;
-    }
+  button.plus,
+  button.minus {
+    background-color: #e94560;
+  }
 
-    .amount {
-        background-color: #e94560;
-    }
-
-    button.plus,
-    button.minus {
-        background-color: #e94560;
-    }
-
-    .orderSummary {
-        background-color: #16213e;
-    }
+  .orderSummary {
+    background-color: #16213e;
+  }
 }

@@ -1,14 +1,15 @@
 {
-    "trailingComma": "all",
-    "printWidth": 80,
-    "proseWrap": "always",
-    "tabWidth": 4,
-    "overrides": [
-        {
-            "files": "*.html",
-            "options": {
-                "printWidth": 120
-            }
-        }
-    ]
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 80,
+  "proseWrap": "always",
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "printWidth": 120
+      }
+    }
+  ]
 }

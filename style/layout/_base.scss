@@ -1,491 +1,491 @@
 /*Här kodar vi för mobilvyn.*/
 
 body {
-    font-family: "Josefin Sans", sans-serif;
-    background-color: #ebedef;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #ebedef;
 }
 
 header {
-    display: flex;
-    position: sticky;
-    top: 0;
-    justify-content: flex-start;
-    align-items: center;
-    background: #34495e;
-    margin-bottom: 0.5rem;
-    box-sizing: border-box;
-    z-index: 1;
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: flex-start;
+  align-items: center;
+  background: #34495e;
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+  z-index: 1;
 }
 
 main {
-    margin: 0 auto;
-    padding: 0 1rem;
-    max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 1200px;
 }
 
 .header-container {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    width: min-content;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: min-content;
 }
 
 i {
-    margin: 0.3rem;
+  margin: 0.3rem;
 }
 
 /*Dekoration till länkar*/
 a {
-    text-decoration: none;
-    color: rgb(249, 246, 246);
+  text-decoration: none;
+  color: rgb(249, 246, 246);
 }
 
 h1 {
-    font-size: 2rem;
-    margin: 5px;
-    display: inline;
-    position: relative;
-    display: table-cell;
-    vertical-align: middle;
-    left: 10px;
-    font-family: "Jua", sans-serif;
-    color: #eb61a6;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  font-size: 2rem;
+  margin: 5px;
+  display: inline;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  left: 10px;
+  font-family: 'Jua', sans-serif;
+  color: #eb61a6;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 h3 {
-    font-size: 2rem;
-    font-family: "Josefin sans", sans-serif;
-    color: #eb16a6;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-    margin: 3px;
-    padding-top: 5px;
+  font-size: 2rem;
+  font-family: 'Josefin sans', sans-serif;
+  color: #eb16a6;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  margin: 3px;
+  padding-top: 5px;
 }
 
 .kampanj {
-    font-size: 2rem;
-    font-family: "Josefin sans", sans-serif;
-    color: #34495e;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-    text-align: center;
+  font-size: 2rem;
+  font-family: 'Josefin sans', sans-serif;
+  color: #34495e;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  text-align: center;
 }
 
 .cartContainer .fa-solid {
-    color: white;
+  color: white;
 }
 
 .donutIcon {
-    display: none;
+  display: none;
 }
 
 .container {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    right: 0;
-    margin: 0 20px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  right: 0;
+  margin: 0 20px;
 }
 
 .cartContainer {
-    position: relative;
+  position: relative;
 }
 
 .amount {
-    background-color: #eb61a6;
-    font-weight: bold;
-    font-size: 1rem;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: -5px;
-    right: -5px;
+  background-color: #eb61a6;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -5px;
+  right: -5px;
 }
 
 .cartContainer {
-    font-size: 1.4rem;
-    position: relative;
+  font-size: 1.4rem;
+  position: relative;
 }
 
 .price {
-    font-size: 1.5rem;
-    position: relative;
-    color: white;
+  font-size: 1.5rem;
+  position: relative;
+  color: white;
 }
 
 .cartContainer,
 .menuButton {
-    border: 0px;
-    background: transparent;
+  border: 0px;
+  background: transparent;
 }
 
 .menuButton span {
-    display: block;
-    background-color: white;
-    height: 4px;
-    width: 25px;
-    margin: 4px 0;
-    border-radius: 4px;
+  display: block;
+  background-color: white;
+  height: 4px;
+  width: 25px;
+  margin: 4px 0;
+  border-radius: 4px;
 }
 
 .nav {
-    width: 55vw;
-    height: 100vh;
-    background-color: #34495e;
-    position: fixed;
-    top: 0px;
-    right: -100%;
-    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-    z-index: 1;
+  width: 55vw;
+  height: 100vh;
+  background-color: #34495e;
+  position: fixed;
+  top: 0px;
+  right: -100%;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: 1;
 }
 
 nav.open {
-    right: 0%;
+  right: 0%;
 }
 
 .nav ul li {
-    border-bottom: 2px solid rgba(254, 253, 253, 0.05);
-    border-top: 2px solid rgba(225, 225, 225, 0.05);
-    margin-bottom: 1rem;
-    padding-left: 1rem;
+  border-bottom: 2px solid rgba(254, 253, 253, 0.05);
+  border-top: 2px solid rgba(225, 225, 225, 0.05);
+  margin-bottom: 1rem;
+  padding-left: 1rem;
 }
 
 .closeMenu {
-    font-size: 1.6rem;
-    position: relative;
-    top: 0.3rem;
-    background: transparent;
-    outline: 0;
-    border: 0;
+  font-size: 1.6rem;
+  position: relative;
+  top: 0.3rem;
+  background: transparent;
+  outline: 0;
+  border: 0;
 }
 
 .selection {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    position: relative;
-    top: 2rem;
-    font-size: 2rem;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  top: 2rem;
+  font-size: 2rem;
+  padding: 0;
 }
 
 .selection li {
-    color: white;
+  color: white;
 }
 
 .closeMenu .fa-regular {
-    color: white;
+  color: white;
 }
 
 // Munkblock
 
 .sectionDonut {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    border: 1px solid;
-    margin-bottom: 30px;
-    padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  border: 1px solid;
+  margin-bottom: 30px;
+  padding-bottom: 1rem;
 }
 
 .donutContainer {
-    position: relative;
-    margin: auto;
-    display: flex;
-    justify-content: center;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .img1,
 .img2 {
-    border-radius: 15%;
-    width: 200px;
-    height: auto;
-    margin-bottom: 1rem;
-    outline: 2px solid #34495e;
+  border-radius: 15%;
+  width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+  outline: 2px solid #34495e;
 }
 
 .slideshowBtn {
-    position: relative;
-    margin: auto;
-    color: black;
+  position: relative;
+  margin: auto;
+  color: black;
 }
 
 .leftArrow {
-    background: transparent;
-    border: 0;
+  background: transparent;
+  border: 0;
 }
 
 .rightArrow {
-    background: transparent;
-    border: 0;
+  background: transparent;
+  border: 0;
 }
 
 button.plus,
 button.minus {
-    border-radius: 10%;
-    background-color: #eb61a6;
-    font-weight: bold;
-    height: 2rem;
-    width: 2rem;
+  border-radius: 10%;
+  background-color: #eb61a6;
+  font-weight: bold;
+  height: 2rem;
+  width: 2rem;
 }
 
 .donutAmountField {
-    width: 3rem;
-    height: 2rem;
-    // text-align: center;
-    font-size: 1.5rem;
-    border: 0;
-    outline: 0;
+  width: 3rem;
+  height: 2rem;
+  // text-align: center;
+  font-size: 1.5rem;
+  border: 0;
+  outline: 0;
 }
 
 .donutAmountContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 p {
-    margin: 0.8rem 0.8rem;
+  margin: 0.8rem 0.8rem;
 }
 
 // Kundkorg
 
 .fa-regular {
-    font-size: 2rem;
-    position: relative;
-    top: 0.5rem;
-    color: #34495e;
+  font-size: 2rem;
+  position: relative;
+  top: 0.5rem;
+  color: #34495e;
 }
 
 .summary {
-    width: 100vw;
-    min-height: 100vh;
-    background-color: #ebedef;
-    position: fixed;
-    top: 0px;
-    right: -110%;
-    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-    overflow-y: auto;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #ebedef;
+  position: fixed;
+  top: 0px;
+  right: -110%;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  overflow-y: auto;
 }
 
 .summary.open {
-    right: 0;
-    z-index: 2;
+  right: 0;
+  z-index: 2;
 }
 
 .summary span {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .summary p {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .orderButton {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 
 .order {
-    border-radius: 10%;
-    background-color: #eb61a6;
-    font-weight: bold;
-    height: 2rem;
+  border-radius: 10%;
+  background-color: #eb61a6;
+  font-weight: bold;
+  height: 2rem;
 }
 
 .closeSummary,
 .closeForm {
-    background: transparent;
-    border: 0;
-    position: relative;
-    left: 20px;
+  background: transparent;
+  border: 0;
+  position: relative;
+  left: 20px;
 }
 
 .cartText {
-    text-align: center;
-    font-family: "Jua", sans-serif;
-    color: #eb61a6;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    margin-top: 0;
+  text-align: center;
+  font-family: 'Jua', sans-serif;
+  color: #eb61a6;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  margin-top: 0;
 }
 
 .amountProducts,
 .discount,
 .shipping {
-    display: flex;
-    justify-content: space-evenly;
-    color: #34495e;
+  display: flex;
+  justify-content: space-evenly;
+  color: #34495e;
 }
 
 .line {
-    border-bottom: 1px solid #34495e;
-    width: 50vw;
-    margin: auto;
+  border-bottom: 1px solid #34495e;
+  width: 50vw;
+  margin: auto;
 }
 
 .totalPrice {
-    display: flex;
-    justify-content: space-evenly;
-    color: #34495e;
+  display: flex;
+  justify-content: space-evenly;
+  color: #34495e;
 }
 
 .donutsOrdered {
-    text-align: center;
-    font-weight: bold;
-    color: #34495e;
+  text-align: center;
+  font-weight: bold;
+  color: #34495e;
 }
 
 .donutSum {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .orderedDonuts {
-    color: #34495e;
+  color: #34495e;
 }
 
 .amountDonut {
-    color: #34495e;
+  color: #34495e;
 }
 
 #form {
-    text-align: center;
-    position: relative;
+  text-align: center;
+  position: relative;
 }
 
 #formPage {
-    width: 100vw;
-    height: 100vh;
-    background-color: #ebedef;
-    position: fixed;
-    top: 0px;
-    right: -110%;
-    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-    overflow: auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ebedef;
+  position: fixed;
+  top: 0px;
+  right: -110%;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  overflow: auto;
 
-    span {
-        font-size: 1.5rem;
-    }
+  span {
+    font-size: 1.5rem;
+  }
 
-    p {
-        font-size: 2rem;
-    }
+  p {
+    font-size: 2rem;
+  }
 }
 #formPage.open {
-    right: 0;
-    z-index: 3;
+  right: 0;
+  z-index: 3;
 }
 
 // Kort och faktura under denna rad är osynlig fram tills att betalningssätt har valts.
 .invoice {
-    display: none;
+  display: none;
 }
 
 .card {
-    display: none;
+  display: none;
 }
 
 /* Style sortering och filter*/
 .sort-filter {
-    margin: 15px;
+  margin: 15px;
 }
 
 .sort-filter-actions {
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 #sort {
-    appearance: none;
-    border: none;
-    background-color: transparent;
-    font-size: 1.2rem;
-    color: #34495e;
-    cursor: pointer;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  color: #34495e;
+  cursor: pointer;
 }
 
 .filter {
-    font-size: 1.2rem;
-    color: #34495e;
-    cursor: pointer;
+  font-size: 1.2rem;
+  color: #34495e;
+  cursor: pointer;
 }
 
 .fa-sort,
 .fa-filter {
-    color: #34495e;
+  color: #34495e;
 }
 
 /* denna ska visas med hjälp av JavaScript*/
 .filter-range {
-    text-align: right;
+  text-align: right;
 }
 
 /*Orderbekräftelsen*/
 .orderSummary {
-    display: none;
-    z-index: 50;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    background-color: lightgrey;
-    text-align: center;
-    padding: 50px;
-    box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px white,
-        0.3em 0.3em 1em rgb(0 0 0 / 30%);
-    min-width: calc(90% - 100px);
+  display: none;
+  z-index: 50;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-color: lightgrey;
+  text-align: center;
+  padding: 50px;
+  box-shadow: inset 0 -3em 3em rgb(0 0 0 / 10%), 0 0 0 2px white,
+    0.3em 0.3em 1em rgb(0 0 0 / 30%);
+  min-width: calc(90% - 100px);
 }
 
 table {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 tr {
-    text-align: left;
+  text-align: left;
 }
 
 td,
 th {
-    padding-right: 20px;
+  padding-right: 20px;
 }
 
 #darkModeButton {
-    margin: 10px;
+  margin: 10px;
 }
 
 // Ratingstjärnor
 .material-symbols-outlined {
-    // font-variation-settings: "FILL" 1;
-    color: #eb61a6;
-    margin-bottom: 10px;
+  // font-variation-settings: "FILL" 1;
+  color: #eb61a6;
+  margin-bottom: 10px;
 }
 
 // Knappar
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 button:disabled {
-    cursor: not-allowed;
-    pointer-events: all;
+  cursor: not-allowed;
+  pointer-events: all;
 }

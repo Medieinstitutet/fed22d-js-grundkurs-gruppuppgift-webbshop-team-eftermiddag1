@@ -1,34 +1,34 @@
 // Här lägger vi till koden för att anpassa layouten för desktop.
 header {
-    justify-content: center;
+  justify-content: center;
 }
 
 h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .header-container {
-    width: unset;
+  width: unset;
 }
 
 .munkContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
 }
 
 .donutIcon {
-    display: block;
+  display: block;
 }
 
 .sectionDonut {
-    background-color: #ebedef;
-    padding: 1rem;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    border: 3px solid #34495e;
+  background-color: #ebedef;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  border: 3px solid #34495e;
 }
 
 .campaign {
-    text-align: center;
+  text-align: center;
 }
