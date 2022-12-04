@@ -33,6 +33,7 @@ function summaryOpen() {
     /*document.querySelector(".munkContainer").style.display = "none";*/
 }
 //Munkarray
+
 const initialDonuts = [
     {
         name: "Almond",
@@ -257,7 +258,7 @@ function printOrderedDonuts() {
       <div class="donutSum">
         <img class="img1" src="${donuts[i].Image}" width="80" height="80"/>
         <span class="orderedDonuts">${donuts[i].name}</span>
-        <span class="amountDonut">${donuts[i].amount}st</span>
+        <span class="amountDonut">${donuts[i].amount} st</span>
       </div>
       `;
         }
@@ -422,6 +423,7 @@ function toggleFilter() {
 
 function initSummary(event) {
     event.preventDefault();
+
     const orderSummary = document.querySelector(".orderSummary");
 
     const rows = donuts
@@ -443,7 +445,7 @@ function initSummary(event) {
     orderSummary.innerHTML = `<section>
         <h3> Tack för din beställning!</h3>
         <p>Din beställning har beräknad leveranstid:</p>
-        <p>30 minuter.</p>
+        <p class="delivery"></p> 
         <table>
             <thead>
                 <tr>
@@ -459,10 +461,30 @@ function initSummary(event) {
         <p>Summa: ${sum} kr</p>
     </section>`;
 
+    time();
+
     orderSummary.style.display = "block";
 }
 
 submitButton.addEventListener("click", initSummary);
+
+// Leveranstiden
+function time() {
+    const deliveryTime = document.querySelector(".delivery");
+
+    const day = today.getDay();
+    const hour = today.getHours();
+
+    if (day === 5 && hour >= 11 && hour < 13) {
+        deliveryTime.innerHTML = "kl 15:00";
+    } else if (hour >= 22 || hour < 6) {
+        deliveryTime.innerHTML = "ca 45 minuter";
+    } else if (day === 6 || day === 0) {
+        deliveryTime.innerHTML = "ca 1,5 timmar";
+    } else {
+        deliveryTime.innerHTML = "ca 30 minuter";
+    }
+}
 
 // Rabatter
 const discountCodeField = document.getElementById("discountCode");
