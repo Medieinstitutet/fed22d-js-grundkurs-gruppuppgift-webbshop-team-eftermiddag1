@@ -27,3 +27,11 @@ HTML validering
 
 
 <img width="959" alt="lighthouse" src="https://user-images.githubusercontent.com/114957292/205520152-e737cc37-b843-41fe-a18f-d79d5321e799.png">
+
+Länk till live version
+https://medieinstitutet.github.io/fed22d-js-grundkurs-gruppuppgift-webbshop-team-eftermiddag1/
+
+Teknikstack:
+- HTML
+- CSS
+- Javascript
