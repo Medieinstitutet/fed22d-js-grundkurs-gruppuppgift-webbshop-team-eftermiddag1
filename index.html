@@ -27,16 +27,14 @@
                 <img class="donutIcon" src="./images/donutIcon.png" alt="Ikon munk" width="50" height="50" />
             </div>
             <div class="container">
-                <!--Ikon kundvagn-->
-                <div class="cartContainer">
-                    <a href="#" class="shoppingCart">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </a>
-                    <span class="amount"></span>
-                </div>
-
                 <!--När en munk läggs till i kundvagnen ska totalpriset dyka upp-->
-                <span class="price">0kr</span>
+                <span class="price"></span>
+
+                <!--Ikon kundvagn-->
+                <button class="cartContainer">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="amount"></span>
+                </button>
 
                 <!-- Knappen till hamburgarmenyn -->
                 <button class="menuButton" aria-label="menu">
@@ -54,7 +52,7 @@
             </button>
             <ul class="selection">
                 <li>
-                    <a href="#body"><i class="fa-solid fa-house"></i>Start</a>
+                    <a href="#"><i class="fa-solid fa-house"></i>Start</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa-solid fa-address-book"></i>Kontakt</a>
@@ -84,10 +82,11 @@
                     </div>
                     <div class="filter"><i class="fa-solid fa-filter"></i>Filtrera på pris</div>
                 </div>
-                <div class="filter-range">
+                <div class="filter-range hidden">
                     <span>0 kr</span>
                     <input id="priceRange" type="range" value="23" min="0" max="23" name="priceRange" />
-                    <span id="maxPrice">23 kr</span>
+                    <input id="maxPrice" type="number" value="23" min="0" max="23" name="maxPrice" />
+                    <span> kr</span>
                 </div>
             </div>
 
@@ -132,7 +131,9 @@
                     <p>Att betala</p>
                     <p class="totalSummary">0</p>
                 </div>
-                <div class="orderButton"><link href="#form" /><button class="order">Till beställning</button></div>
+                <div class="orderButton">
+                    <link href="#form" /><button class="order" disabled>Till beställning</button>
+                </div>
                 <br />
             </section>
 

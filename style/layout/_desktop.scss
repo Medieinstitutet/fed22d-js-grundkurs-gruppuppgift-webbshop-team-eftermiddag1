@@ -3,6 +3,14 @@ header {
     justify-content: center;
 }
 
+h1 {
+    font-size: 2.5rem;
+}
+
+.header-container {
+    width: unset;
+}
+
 .munkContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

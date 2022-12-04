@@ -17,10 +17,17 @@ header {
     z-index: 1;
 }
 
+main {
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 1200px;
+}
+
 .header-container {
     display: flex;
     gap: 20px;
     align-items: center;
+    width: min-content;
 }
 
 i {
@@ -34,7 +41,7 @@ a {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 5px;
     display: inline;
     position: relative;
@@ -60,9 +67,10 @@ h3 {
     font-family: "Josefin sans", sans-serif;
     color: #34495e;
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    text-align: center;
 }
 
-.shoppingCart .fa-solid {
+.cartContainer .fa-solid {
     color: white;
 }
 
@@ -98,7 +106,7 @@ h3 {
     right: -5px;
 }
 
-.shoppingCart {
+.cartContainer {
     font-size: 1.4rem;
     position: relative;
 }
@@ -109,10 +117,10 @@ h3 {
     color: white;
 }
 
+.cartContainer,
 .menuButton {
     border: 0px;
     background: transparent;
-    cursor: pointer;
 }
 
 .menuButton span {
@@ -177,6 +185,9 @@ nav.open {
 // Munkblock
 
 .sectionDonut {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     border: 1px solid;
     margin-bottom: 30px;
@@ -226,6 +237,23 @@ button.minus {
     font-weight: bold;
     height: 2rem;
     width: 2rem;
+}
+
+.donutAmountField {
+    width: 3rem;
+    height: 2rem;
+    // text-align: center;
+    font-size: 1.5rem;
+    border: 0;
+    outline: 0;
+}
+
+.donutAmountContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 p {
@@ -284,7 +312,6 @@ p {
     border: 0;
     position: relative;
     left: 20px;
-    cursor: pointer;
 }
 
 .cartText {
@@ -375,20 +402,6 @@ p {
 }
 
 /* Style sortering och filter*/
-#sort {
-    appearance: none;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
-    font-size: 1.2rem;
-    color: #34495e;
-}
-
-.filter {
-    font-size: 1.2rem;
-    color: #34495e;
-}
-
 .sort-filter {
     margin: 15px;
 }
@@ -399,6 +412,22 @@ p {
     align-items: center;
     margin-bottom: 10px;
 }
+
+#sort {
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: #34495e;
+    cursor: pointer;
+}
+
+.filter {
+    font-size: 1.2rem;
+    color: #34495e;
+    cursor: pointer;
+}
+
 .fa-sort,
 .fa-filter {
     color: #34495e;
@@ -407,11 +436,6 @@ p {
 /* denna ska visas med hjälp av JavaScript*/
 .filter-range {
     text-align: right;
-    display: none;
-}
-
-.filter {
-    cursor: pointer;
 }
 
 /*Orderbekräftelsen*/
@@ -453,4 +477,15 @@ th {
     // font-variation-settings: "FILL" 1;
     color: #eb61a6;
     margin-bottom: 10px;
+}
+
+// Knappar
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    pointer-events: all;
 }
