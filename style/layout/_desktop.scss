@@ -3,6 +3,10 @@ header {
     justify-content: center;
 }
 
+h1 {
+    font-size: 2.5rem;
+}
+
 .munkContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -19,4 +23,8 @@ header {
     border-radius: 5px;
     font-size: 1.2rem;
     border: 3px solid #34495e;
+}
+
+.campaign {
+    text-align: center;
 }
