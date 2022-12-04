@@ -35,3 +35,7 @@ Teknikstack:
 - HTML
 - CSS
 - Javascript
+
+
+CSS-validering
+![CSS-validator](https://user-images.githubusercontent.com/114957292/205520677-173315d8-529f-4347-a755-ae9a5f87ed7e.png)
