@@ -1,6 +1,7 @@
 // Globalt
 const discountSum = document.getElementById("discountSum");
 const today = new Date();
+let tenDonutsDiscountSum;
 const isLucia = today.getMonth() === 11 && today.getDate() === 13;
 let shippingCostFunction = (value) =>
     Math.round((25 + 0.1 * value) * 100) / 100;
@@ -29,7 +30,6 @@ orderButton.addEventListener("click", openFormPage);
 
 function summaryOpen() {
     summary.classList.toggle("open");
-    /*document.querySelector(".munkContainer").style.display = "none";*/
 }
 //Munkarray
 const initialDonuts = [
@@ -181,14 +181,16 @@ function renderDonuts() {
         btn.addEventListener("click", decreaseDonutAmount);
     });
 
-    const sum = donuts.reduce((previousValue, donut) => {
+    let sum = donuts.reduce((previousValue, donut) => {
+        return donut.amount * donut.price + previousValue;
+    }, 0);
+    tenDonutsDiscountSum = 0;
+    tenDonutsDiscountSum = donuts.reduce((previousValue, donut) => {
         if (donut.amount >= 10) {
-            console.log("hej");
-            return donut.amount * donut.price * 0.9 + previousValue;
-        } else {
-            return donut.amount * donut.price + previousValue;
+            return donut.amount * donut.price * 0.1 + previousValue;
         }
     }, 0);
+    sum -= tenDonutsDiscountSum;
 
     const sumAmount = donuts.reduce((previousValue, donut) => {
         return donut.amount + previousValue;
@@ -403,13 +405,13 @@ function initSummary(event) {
                 <td>${name}</td>
                 <td>${amount} st</td>
                 <td>${price * amount} kr</td>
-            </tr>`,
+            </tr>`
         )
         .join("");
 
     const sum = donuts.reduce(
         (sum, { price, amount }) => sum + price * amount,
-        0,
+        0
     );
 
     orderSummary.innerHTML = `<section>
@@ -501,7 +503,7 @@ const formPage = document.getElementById("formPage");
 const formCloseIcon = document.querySelector(".closeForm");
 
 formCloseIcon.addEventListener("click", () =>
-    formPage.classList.remove("open"),
+    formPage.classList.remove("open")
 );
 
 function openFormPage() {
