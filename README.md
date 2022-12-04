@@ -22,3 +22,4 @@ Tablet view
 ![image](https://user-images.githubusercontent.com/114922923/205517555-14872106-d574-4774-b0c4-e867fdd676e4.png)
 
 
+[HTML-validator.pdf](https://github.com/Medieinstitutet/fed22d-js-grundkurs-gruppuppgift-webbshop-team-eftermiddag1/files/10149646/HTML-validator.pdf)
